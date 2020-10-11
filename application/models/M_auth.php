@@ -26,7 +26,7 @@ class M_auth extends CI_Model {
     {
         $data = array(
             'email' => $this->input->post('email'),
-            'password' => $this->input->post('password')
+            'password' => md5($this->input->post('password'))
         );
         $query = $this->db->where($data)->get('user');
 		return ($query->num_rows() > 0); /* if exist return true, false otherwise  */

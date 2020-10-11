@@ -81,14 +81,23 @@
 									<li>
 										<div class="user-box">
 											<div class="u-text">
-												<h4>Name</h4>
-												<p class="text-muted">email@example.com</p>
+												<h4><?= 
+												$this->session->userdata("nama");
+												 ?></h4>
+												<p class="text-muted">
+												<?= 
+												$this->session->userdata('nip');
+												?>
+												<br>
+												<?= 
+												$this->session->userdata('email');
+												?></p>
 												<!-- <a href="#" class="btn btn-xs btn-secondary btn-sm">View Profile</a> -->
 											</div>
 										</div>
 									</li>
 									<li>
-										<a class="dropdown-item" href="#">Logout</a>
+										<a class="dropdown-item" href="<?= site_url("auth/logout") ?>">Logout</a>
 									</li>
 								</div>
 							</ul>
