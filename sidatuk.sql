@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 11, 2020 at 02:07 PM
+-- Generation Time: Oct 11, 2020 at 06:20 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.33
 
@@ -65,8 +65,8 @@ CREATE TABLE `irigasi` (
 --
 
 INSERT INTO `irigasi` (`idIrigasi`, `kodeTender`, `namaPaket`, `metodePengadaan`, `nilaiPagu`, `nilaiHPS`, `nilaiKontrak`, `tanggalPermohonanLelang`, `nomorPermohonanLelang`, `rencanaProsesPengadaan`, `tahapTender`, `mulaiLelangRencana`, `selesaiLelangRencana`, `mulaiLelangRealisasi`, `selesaiLelangRealisasi`, `alasanPerubahanJadwal`, `gagalLelang1`, `alasanGagalLelang1`, `mulaiJadwalLelangUlangRencana`, `selesaiJadwalLelangUlangRencana`, `mulaiJadwalLelangUlangRealisasi`, `selesaiJadwalLelangUlangRealisasi`, `alasanPerubahanJadwalLelangUlang`, `gagalLelang2`, `alasanGagalLelang2`, `penunjukanLangsung`, `nomorSPPBJTanggal`, `alasanSPPBJUndur`, `nomorSPKTanggal`, `alasanSPKUndur`) VALUES
-(1, '0987', 'ini nama paket', 'ini metode pengadaan', 80000000, 98700000.34, 80000000, '2020-10-01', '86868', 'ini rencana proses pengadaan', 'ini tahap tender', '2020-10-02', '2020-10-03', '2020-10-04', '2020-10-05', 'ini alasan', 'Tidak', 'ya gagal', '2020-10-15', '2020-10-16', '2020-10-17', '2020-10-25', 'ini gagal', 'Tidak', 'fhgf', 'penjunujakan langsung', '09827178', 'kenapa ya', '8866672', 'kenapa hayo'),
-(2, '0987', 'ini nama paket 2', 'ini metode pengadaan 2', 80000000, 98700000.34, 80000000, '2020-10-01', 'ini nomor 098762 2', 'ini rencana proses pengadaan 2', 'ini tahap tender 2', '2020-10-22', '2020-10-24', '2020-10-22', '2020-10-24', 'ini alasan 2', 'Tidak', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '131121213312', 'kenapa ya', '8866672344', 'kenapa yas'),
+(1, '2892', 'sundawapan1', 'jkjkasjkd', 91873719, 8121819289, 91281928, '2020-12-01', '129818', 'jkasdkj', 'jadh jiadjal', '2020-12-01', '2020-12-31', '2020-12-31', '2020-01-31', 'asda', 'Tidak', ' asaa', '2020-11-06', '2020-11-06', '2020-10-30', '2020-10-31', 'as', 'Tidak', 'sasdas', ' asdasda', 'asdas', 'asdas', 'asdas', 'asdas'),
+(2, '0987', 'ini nama paket 2', 'ini metode pengadaan 2', 80000000, 98700000.34, 80000000, '2020-10-01', '', 'ini rencana proses pengadaan 2', 'ini tahap tender 2', '2020-10-22', '2020-10-24', '2020-10-22', '2020-10-24', 'ini alasan 2', 'Tidak', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', 'Tidak', '', '', '131121213312', 'kenapa ya', '8866672344', 'kenapa yas'),
 (6, '9810', '9118', 'metode oke', 92801019, 9882891928, 100, '2020-01-01', '9283919', '929999.23', 'oke', '2020-09-30', '2020-09-27', '2019-11-08', '2020-12-30', 'corona 2', 'ya', 'asik', '2020-12-31', '2020-01-31', '2020-10-17', '2020-10-13', 'corona', 'ya', 'pandemi', 'cek', '928182 - 28/09/2020', 'tidak diketahui', '89182 - 29/09/2020', 'tidak diketahui'),
 (7, '91218', '', 'jasdaj', 0, 1291, 0, '2019-10-28', '81298218', '', 'kjasjkdh', '0000-00-00', '0000-00-00', '2019-11-29', '2019-12-30', '', NULL, '', '2020-10-12', '2020-10-13', '0000-00-00', '0000-00-00', '', 'Tidak', '', '', '', '', '', '');
 
@@ -109,6 +109,13 @@ CREATE TABLE `sarpras` (
   `alasanSPKUndur` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `sarpras`
+--
+
+INSERT INTO `sarpras` (`idSarpras`, `kodeTender`, `namaPaket`, `metodePengadaan`, `nilaiPagu`, `nilaiHPS`, `nilaiKontrak`, `tanggalPermohonanLelang`, `nomorPermohonanLelang`, `rencanaProsesPengadaan`, `tahapTender`, `mulaiLelangRencana`, `selesaiLelangRencana`, `mulaiLelangRealisasi`, `selesaiLelangRealisasi`, `alasanPerubahanJadwal`, `gagalLelang1`, `alasanGagalLelang1`, `mulaiJadwalLelangUlangRencana`, `selesaiJadwalLelangUlangRencana`, `mulaiJadwalLelangUlangRealisasi`, `selesaiJadwalLelangUlangRealisasi`, `alasanPerubahanJadwalLelangUlang`, `gagalLelang2`, `alasanGagalLelang2`, `penunjukanLangsung`, `nomorSPPBJTanggal`, `alasanSPPBJUndur`, `nomorSPKTanggal`, `alasanSPKUndur`) VALUES
+(2, '3113', 'asdas', 'jasdaj', 2312, 12306, 12312, '2020-10-31', '123123', '123das', 'asdasd', '2020-10-24', '2020-11-04', '2020-10-24', '2020-10-07', 'asdasd', 'Tidak', 'asdas ads', '2020-10-29', '2020-10-15', '2020-10-17', '2020-10-29', ' asdasd', 'Tidak', 'asdas', 'asdas', 'asdadas', 'adas', 'asdas', 'adasd');
+
 -- --------------------------------------------------------
 
 --
@@ -147,6 +154,13 @@ CREATE TABLE `sundawapan` (
   `nomorSPKTanggal` text DEFAULT NULL,
   `alasanSPKUndur` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `sundawapan`
+--
+
+INSERT INTO `sundawapan` (`idSundawapan`, `kodeTender`, `namaPaket`, `metodePengadaan`, `nilaiPagu`, `nilaiHPS`, `nilaiKontrak`, `tanggalPermohonanLelang`, `nomorPermohonanLelang`, `rencanaProsesPengadaan`, `tahapTender`, `mulaiLelangRencana`, `selesaiLelangRencana`, `mulaiLelangRealisasi`, `selesaiLelangRealisasi`, `alasanPerubahanJadwal`, `gagalLelang1`, `alasanGagalLelang1`, `mulaiJadwalLelangUlangRencana`, `selesaiJadwalLelangUlangRencana`, `mulaiJadwalLelangUlangRealisasi`, `selesaiJadwalLelangUlangRealisasi`, `alasanPerubahanJadwalLelangUlang`, `gagalLelang2`, `alasanGagalLelang2`, `penunjukanLangsung`, `nomorSPPBJTanggal`, `alasanSPPBJUndur`, `nomorSPKTanggal`, `alasanSPKUndur`) VALUES
+(2, '', '', '', 0, 0, 0, '2020-10-15', '', '', '', '2020-10-17', '2020-10-07', '2020-10-02', '2020-10-16', '', NULL, '', '2020-10-07', '2020-10-21', '2020-10-17', '2020-10-07', ' ', NULL, '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -215,9 +229,11 @@ CREATE TABLE `tahapanpersiapan` (
 --
 
 INSERT INTO `tahapanpersiapan` (`idPersiapan`, `tipe`, `uraian`, `status`, `keterangan`, `fileName`, `dateTime`) VALUES
-(1, 'Penyerahan Lokasi', 'Ini uraian Ini uraian Ini uraian Ini uraian Ini uraian Ini uraian Ini uraian Ini uraian Ini uraian ', 'Ya', NULL, 'inifile.pdf', '2020-10-11 08:17:12'),
-(2, 'Penyerahan Lokasi', 'Ini uraian Ini uraian Ini uraian Ini uraian Ini uraian Ini uraian Ini uraian Ini uraian Ini uraian lagi', 'Tidak', 'Ini keterangan Ini keterangan Ini keterangan Ini keterangan Ini keterangan Ini keterangan Ini keterangan.', '', '2020-10-11 08:18:00'),
-(4, 'Penyerahan Lokasi', 'Tes input', 'Ya', '', '1920-1_Kartu_Ujian_UAS_1301184476.pdf', '2020-10-11 10:29:02');
+(1, 'Penyerahan Lokasi', 'Ini uraian Ini uraian Ini uraian Ini uraian Ini uraian Ini uraian Ini uraian Ini uraian Ini uraian ', 'Tidak', 'asddde', NULL, '2020-10-11 15:42:37'),
+(4, 'Penyerahan Lokasi', 'Tes input', 'Ya', '', '1920-1_Kartu_Ujian_UAS_1301184476.pdf', '2020-10-11 10:29:02'),
+(5, 'Penyerahan Lokasi', 'asdas', 'Ya', NULL, 'Uts_Sem4.PDF', '2020-10-11 15:42:05'),
+(6, 'Penyerahan Lokasi', '12sad', 'Ya', NULL, 'IDEA_CORONA_ILLUSTRASI.png', '2020-10-11 15:33:18'),
+(7, 'Penyerahan Lokasi', 'sada', 'Tidak', 'adas', NULL, '2020-10-11 15:34:56');
 
 -- --------------------------------------------------------
 
@@ -307,13 +323,13 @@ ALTER TABLE `irigasi`
 -- AUTO_INCREMENT for table `sarpras`
 --
 ALTER TABLE `sarpras`
-  MODIFY `idSarpras` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idSarpras` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `sundawapan`
 --
 ALTER TABLE `sundawapan`
-  MODIFY `idSundawapan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idSundawapan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tahapanpelaksaan`
@@ -337,7 +353,7 @@ ALTER TABLE `tahapanpenyelesaian`
 -- AUTO_INCREMENT for table `tahapanpersiapan`
 --
 ALTER TABLE `tahapanpersiapan`
-  MODIFY `idPersiapan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idPersiapan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `user`
