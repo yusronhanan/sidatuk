@@ -7,16 +7,15 @@
 							<div class="card">
 								<div class="card-header">
                                     <h4 class="card-title">Pilih Tahapan:</h4> 
-                                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                        <option value="penyerahanlokasi">Penyerahan Lokasi</option>
-                                        <option value="spmk">SPMK (Surat Perintah Mulai Kerja)</option>
-                                        <option value="rapatpersiapan">Rapat Persiapan</option>
-                                        <option value="pembayaranmuka">Pembayaran Uang Muka</option>
-                                        <option value="mobilisasi">Mobilisasi</option>
-                                      </select>
+                                    <a href="<?=site_url('tahapanPersiapan/data/penyerahanlokasi')?>" type="button" class="btn btn-<?php if($tipe_ == 'penyerahanlokasi'){ echo 'primary';} else{ echo 'info';}?>">Penyerahan Lokasi</a>
+									<a href="<?=site_url('tahapanPersiapan/data/spmk')?>" type="button" class="btn btn-<?php if($tipe_ == 'spmk'){ echo 'primary';} else{ echo 'info';}?>">SPMK (Surat Perintah Mulai Kerja)</a>
+                                    <a href="<?=site_url('tahapanPersiapan/data/rapatpersiapan')?>" type="button" class="btn btn-<?php if($tipe_ == 'rapatpersiapan'){ echo 'primary';} else{ echo 'info';}?>">Rapat Persiapan</a>
+                                    <a href="<?=site_url('tahapanPersiapan/data/pembayaranuangmuka')?>" type="button" class="btn btn-<?php if($tipe_ == 'pembayaranuangmuka'){ echo 'primary';} else{ echo 'info';}?>">Pembayaran Uang Muka</a>
+                                    <a href="<?=site_url('tahapanPersiapan/data/mobilisasi')?>" type="button" class="btn btn-<?php if($tipe_ == 'mobilisasi'){ echo 'primary';} else{ echo 'info';}?>">Mobilisasi</a>
+								<hr>
                                       <a  href="<?= site_url("tahapanPersiapan/tambah/").$tipe_ ?>" class="btn btn-primary btn-round ml-auto" style="float: right;">
 										<i class="fa fa-plus"></i>
-										Tambah Data <?= $tipe ?>
+										Tambah Data
 									</a>
 								</div>
 								<div class="card-body">
@@ -50,18 +49,20 @@
                                                     }
                                                     
                                                     ?></td>
-													<td><?= $d->dateTime ?></td>
+													<td><?= date_format(date_create($d->dateTime),"d/m/Y") ?></td>
 													
                                                         <td><?php 
                                                     
                                                     if($d->status == "Ya"){
                                                         ?>
                                                         <div class="aksifile">
-                                                        <a href="<?php echo base_url()."assets/file/".$d->fileName; ?>" target="blank" class="btn btn-primary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Download"><i class="fa fa-download"></i></a>
-														<a href="<?php echo base_url()."assets/file/".$d->fileName; ?>" target="blank" class="btn btn-info btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Print"><i class="fa fa-print"></i></a>
+                                                        <a download href="<?php echo base_url()."assets/file/".$d->fileName; ?>"  class="btn btn-primary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Download"><i class="fa fa-download"></i></a>
+														<a  href="<?php echo base_url()."assets/file/".$d->fileName; ?>" target="blank" class="btn btn-info btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Print"><i class="fa fa-print"></i></a>
                                                         </div>
 
                                                         <?php
+                                                    } else{
+                                                        echo "-";
                                                     }
                                                     
                                                     ?></td>

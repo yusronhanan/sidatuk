@@ -1,8 +1,8 @@
 <div class="page-inner">
 					<div class="page-header">
-						<h4 class="page-title">Ubah Data Irigasi</h4>
+						<h4 class="page-title">Ubah Data Sarpras</h4>
 					</div>
-					<form method="post" action="<?= site_url('irigasi/edit/').$data->idIrigasi;?>" enctype="multipart/form-data">
+					<form method="post" action="<?= site_url('sarpras/edit/').$data->idSarpras;?>" enctype="multipart/form-data">
 					<div class="row">
 						<div class="col-lg-6 col-md-6 cols-sm-12">
 							<div class="form-group">

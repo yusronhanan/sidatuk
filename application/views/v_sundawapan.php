@@ -1,13 +1,13 @@
 				<div class="page-inner">
 					<div class="page-header">
-						<h4 class="page-title">Data Irigasi</h4>
+						<h4 class="page-title">Data Sundawapan</h4>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-header">
-									<!-- <h4 class="card-title">Data Irigasi</h4> -->
-									<a href="<?= site_url('irigasi') ?>/tambah" class="btn btn-primary btn-round ml-auto" style="float: right;">
+									<!-- <h4 class="card-title">Data Sundawapan</h4> -->
+									<a href="<?= site_url('sundawapan') ?>/tambah" class="btn btn-primary btn-round ml-auto" style="float: right;">
 										<i class="fa fa-plus"></i>
 										Tambah Data
 									</a>
@@ -95,8 +95,8 @@
 													<td><?= $d->alasanSPKUndur ?></td>
 													<td>
 														<li class="list-inline-item">
-															<a href="<?= site_url('irigasi/ubah/').$d->idIrigasi ?>" class="btn btn-primary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
-															<a href="<?= site_url('irigasi/delete/').$d->idIrigasi ?>"  onClick="return confirm('Apa benar anda ingin menghapusnya?')"  class="btn btn-info btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
+															<a href="<?= site_url('sundawapan/ubah/').$d->idSundawapan ?>" class="btn btn-primary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
+															<a href="<?= site_url('sundawapan/delete/').$d->idSundawapan ?>"  onClick="return confirm('Apa benar anda ingin menghapusnya?')"  class="btn btn-info btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
 														</li>
 													</td>
 												</tr>

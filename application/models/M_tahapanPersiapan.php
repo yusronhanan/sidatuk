@@ -27,9 +27,17 @@ class M_tahapanPersiapan extends CI_Model {
        'status' => $this->input->post('status'),
        'keterangan' => $this->input->post('keterangan')
     );
-    if($file['file_name']!=""){
-        $data['fileName'] = $file['file_name'];
+    
+    if($this->input->post('status') == "Ya"){
+        $data['keterangan'] = null;
+        if($file['file_name']!=""){
+            $data['fileName'] = $file['file_name'];
+        }
+    } else{
+        $data['keterangan'] = $this->input->post('keterangan');
+        $data['fileName'] = null;
     }
+    
     $this->db->where('idPersiapan',$id)->update('tahapanpersiapan', $data);
     return ($this->db->affected_rows() > 0); /* if success return true, false otherwise  */
     }

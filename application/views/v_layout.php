@@ -136,7 +136,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="<?= site_url('sapras') ?>">
+										<a href="<?= site_url('sarpras') ?>">
 											<span class="sub-item">Sapras</span>
 										</a>
 									</li>

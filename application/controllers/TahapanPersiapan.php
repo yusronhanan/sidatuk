@@ -77,19 +77,19 @@ class TahapanPersiapan extends CI_Controller {
         $tipe = "";
         
         if($tipe_ == "penyerahanlokasi"){
-            $formatFile = "";
+            $formatFile = "1.docx";
             $tipe = "Penyerahan Lokasi";
         } else if($tipe_ == "spmk"){
-            $formatFile = "";
+            $formatFile = "2.docx";
             $tipe = "SPMK (Surat Perintah Mulai Kerja)";
         } else if($tipe_ == "rapatpersiapan"){
-            $formatFile = "";
+            $formatFile = "3.docx";
             $tipe = "Rapat Persiapan";
         } else if($tipe_ == "pembayaranuangmuka"){
-            $formatFile = "";
+            $formatFile = "4.docx";
             $tipe = "Pembayaran Uang Muka";
         } else if($tipe_ == "mobilisasi"){
-            $formatFile = "";
+            $formatFile = "5.docx";
             $tipe = "Mobilisasi";
         }
 
@@ -98,7 +98,7 @@ class TahapanPersiapan extends CI_Controller {
             "tipe"  => $tipe, // untuk input hidden
             "formatFile" => $formatFile, // untuk format file
             "data" => $this->M_home->getData(array("idPersiapan" => $id),"tahapanPersiapan")->row(),
-            "main_view" => "v_form_tambah_tahapanPersiapan"
+            "main_view" => "v_ubah_tahapanPersiapan"
         ];
 		$this->load->view('v_layout',$data);       
     }
@@ -111,7 +111,7 @@ class TahapanPersiapan extends CI_Controller {
                         'upload_path' => './assets/file/',
                         'allowed_types' => 'jpg|jpeg|png|pdf'
                     ));
-                    if($this->upload->do_upload('fileUpload')){
+                    $this->upload->do_upload('fileUpload');
                         $file = $this->upload->data();
                             if ($this->M_tahapanPersiapan->add($file)) {
                             $this->session->set_flashdata('type', 'success');
@@ -122,10 +122,7 @@ class TahapanPersiapan extends CI_Controller {
                             $this->session->set_flashdata('notif', 'Gagal tambah data');
                             redirect('tahapanPersiapan/data/'.$tipe_); /* need to modified */
                             }
-                    } else {
-                    $this->session->set_flashdata('notif', 'Gagal upload file');
-                    redirect('tahapanPersiapan/data/'.$tipe_); /* need to modified */
-                  }
+                   
     //   } else {
     //           $this->session->set_flashdata('notif', 'One of required input is empty');
     //           redirect(''); /* need to modified */
@@ -141,8 +138,8 @@ class TahapanPersiapan extends CI_Controller {
                         'upload_path' => './assets/file/',
                         'allowed_types' => 'jpg|jpeg|png|pdf'
                     ));
-                    if($this->upload->do_upload('fileUpload')){
-                        $file = $this->upload->data();
+                    $this->upload->do_upload('fileUpload');
+                    $file = $this->upload->data();
                             if ($this->M_tahapanPersiapan->edit($id, $file)) {
                             $this->session->set_flashdata('type', 'success');
                             $this->session->set_flashdata('notif', 'Sukses ubah data');
@@ -152,10 +149,7 @@ class TahapanPersiapan extends CI_Controller {
                             $this->session->set_flashdata('notif', 'Gagal ubah data');
                             redirect('tahapanPersiapan/data/'.$tipe_); /* need to modified */
                             }
-                    } else {
-                    $this->session->set_flashdata('notif', 'Gagal upload file');   
-                    redirect('tahapanPersiapan/data/'.$tipe_); /* need to modified */
-                  }
+                    
     //   } else {
     //           $this->session->set_flashdata('notif', 'One of required input is empty');
     //           redirect(''); /* need to modified */
