@@ -7,7 +7,7 @@
 							<img style="margin-left: 10px;" src="<?= base_url()?>assets/img/report.png" width="20px" height="20px">
 							<a href="<?= base_url()."assets/file/".$formatFile ?>" download name="contohFormat"><?= $formatFile ?></a>
 					</div>
-					<form method="post" action="<?= site_url('tahapanPersiapan/edit/').$tipe_."/".$data->idPersiapan;?>" enctype="multipart/form-data">
+					<form method="post" action="<?= site_url('tahapanPenyelesaian/edit/').$tipe_."/".$data->idPenyelesaian;?>" enctype="multipart/form-data">
 
                 <input type="hidden" name="tipe" value="<?= $tipe ?>">
                     <div class="form-group">
@@ -32,7 +32,7 @@
                         <?php 
                                                     
                                                     if($data->status == "Ya"){
-                                                        echo 'disabled';
+                                                        echo ' disabled';
                                                     }
                                                     
                                                     ?>
@@ -49,7 +49,7 @@
                               <?php 
                                                     
                                                     if($data->status == "Tidak"){
-                                                        echo ' disabled ';
+                                                        echo 'disabled ';
                                                     }
                                                     if($data->fileName == null){
                                                       echo ' required ';

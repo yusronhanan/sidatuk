@@ -7,13 +7,12 @@
 							<div class="card">
 								<div class="card-header">
                                     <h4 class="card-title">Pilih Tahapan:</h4> 
-                                    <a href="<?=site_url('tahapanPersiapan/data/penyerahanlokasi')?>" type="button" class="btn btn-<?php if($tipe_ == 'penyerahanlokasi'){ echo 'primary';} else{ echo 'info';}?>">Penyerahan Lokasi</a>
-									<a href="<?=site_url('tahapanPersiapan/data/spmk')?>" type="button" class="btn btn-<?php if($tipe_ == 'spmk'){ echo 'primary';} else{ echo 'info';}?>">SPMK (Surat Perintah Mulai Kerja)</a>
-                                    <a href="<?=site_url('tahapanPersiapan/data/rapatpersiapan')?>" type="button" class="btn btn-<?php if($tipe_ == 'rapatpersiapan'){ echo 'primary';} else{ echo 'info';}?>">Rapat Persiapan</a>
-                                    <a href="<?=site_url('tahapanPersiapan/data/pembayaranuangmuka')?>" type="button" class="btn btn-<?php if($tipe_ == 'pembayaranuangmuka'){ echo 'primary';} else{ echo 'info';}?>">Pembayaran Uang Muka</a>
-                                    <a href="<?=site_url('tahapanPersiapan/data/mobilisasi')?>" type="button" class="btn btn-<?php if($tipe_ == 'mobilisasi'){ echo 'primary';} else{ echo 'info';}?>">Mobilisasi</a>
-								<hr>
-                                      <a  href="<?= site_url("tahapanPersiapan/tambah/").$tipe_ ?>" class="btn btn-primary btn-round ml-auto" style="float: right;">
+									<a href="<?=site_url('tahapanPenyelesaian/data/serahterimapertama')?>" type="button" class="btn btn-<?php if($tipe_ == 'serahterimapertama'){ echo 'primary';} else{ echo 'info';}?>">Serah Terima Pertama</a>
+									<a href="<?=site_url('tahapanPenyelesaian/data/pemeliharaanhasilkerja')?>" type="button" class="btn btn-<?php if($tipe_ == 'pemeliharaanhasilkerja'){ echo 'primary';} else{ echo 'info';}?>">Pemeliharaan Hasil Kerja</a>
+                                    <a href="<?=site_url('tahapanPenyelesaian/data/serahterimaakhir')?>" type="button" class="btn btn-<?php if($tipe_ == 'serahterimaakhir'){ echo 'primary';} else{ echo 'info';}?>">Serah Terima Akhir Pekerjaan</a>
+                                    <a href="<?=site_url('tahapanPenyelesaian/data/serahterimapekerjaanselesai')?>" type="button" class="btn btn-<?php if($tipe_ == 'serahterimapekerjaanselesai'){ echo 'primary';} else{ echo 'info';}?>">Serah Terima Pekerajaan Selesai Terhadap Pemilik</a>
+                                    <hr>
+                                      <a  href="<?= site_url("tahapanPenyelesaian/tambah/").$tipe_ ?>" class="btn btn-primary btn-round ml-auto" style="float: right;">
 										<i class="fa fa-plus"></i>
 										Tambah Data
 									</a>
@@ -68,8 +67,8 @@
                                                     ?></td>
                                                     <td>
 														<li class="list-inline-item">
-															<a href="<?= site_url("tahapanPersiapan/ubah/").$tipe_."/".$d->idPersiapan?>" class="btn btn-primary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
-															<a href="<?= site_url("tahapanPersiapan/delete/").$tipe_."/".$d->idPersiapan?>" onClick="return confirm('Apa benar anda ingin menghapusnya?')" class="btn btn-info btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
+															<a href="<?= site_url("tahapanPenyelesaian/ubah/").$tipe_."/".$d->idPenyelesaian?>" class="btn btn-primary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
+															<a href="<?= site_url("tahapanPenyelesaian/delete/").$tipe_."/".$d->idPenyelesaian?>" onClick="return confirm('Apa benar anda ingin menghapusnya?')" class="btn btn-info btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
 														</li>
 													</td>
 												</tr>

@@ -7,13 +7,15 @@
 							<div class="card">
 								<div class="card-header">
                                     <h4 class="card-title">Pilih Tahapan:</h4> 
-                                    <a href="<?=site_url('tahapanPersiapan/data/penyerahanlokasi')?>" type="button" class="btn btn-<?php if($tipe_ == 'penyerahanlokasi'){ echo 'primary';} else{ echo 'info';}?>">Penyerahan Lokasi</a>
-									<a href="<?=site_url('tahapanPersiapan/data/spmk')?>" type="button" class="btn btn-<?php if($tipe_ == 'spmk'){ echo 'primary';} else{ echo 'info';}?>">SPMK (Surat Perintah Mulai Kerja)</a>
-                                    <a href="<?=site_url('tahapanPersiapan/data/rapatpersiapan')?>" type="button" class="btn btn-<?php if($tipe_ == 'rapatpersiapan'){ echo 'primary';} else{ echo 'info';}?>">Rapat Persiapan</a>
-                                    <a href="<?=site_url('tahapanPersiapan/data/pembayaranuangmuka')?>" type="button" class="btn btn-<?php if($tipe_ == 'pembayaranuangmuka'){ echo 'primary';} else{ echo 'info';}?>">Pembayaran Uang Muka</a>
-                                    <a href="<?=site_url('tahapanPersiapan/data/mobilisasi')?>" type="button" class="btn btn-<?php if($tipe_ == 'mobilisasi'){ echo 'primary';} else{ echo 'info';}?>">Mobilisasi</a>
+                                 
+                                    <a href="<?=site_url('tahapanPelaksanaan/data/pemeriksaanbersama')?>" type="button" class="btn btn-<?php if($tipe_ == 'pemeriksaanbersama'){ echo 'primary';} else{ echo 'info';}?>">Pemeriksaan Bersama</a>
+									<a href="<?=site_url('tahapanPelaksanaan/data/pengajuanpersyaratan')?>" type="button" class="btn btn-<?php if($tipe_ == 'pengajuanpersyaratan'){ echo 'primary';} else{ echo 'info';}?>">Pengajuan Persyaratan untuk Material Kegiatan</a>
+                                    <a href="<?=site_url('tahapanPelaksanaan/data/pengawasmutu')?>" type="button" class="btn btn-<?php if($tipe_ == 'pengawasmutu'){ echo 'primary';} else{ echo 'info';}?>">Pengawasan Mutu Konstruksi</a>
+                                    <a href="<?=site_url('tahapanPelaksanaan/data/penerimaandanpembayaran')?>" type="button" class="btn btn-<?php if($tipe_ == 'penerimaandanpembayaran'){ echo 'primary';} else{ echo 'info';}?>">Penerimaan dan Pembayaran Hasil Kerja</a>
+                                    <a href="<?=site_url('tahapanPelaksanaan/data/kontrakkritis')?>" type="button" class="btn btn-<?php if($tipe_ == 'kontrakkritis'){ echo 'primary';} else{ echo 'info';}?>">Kontrak Kritis</a>
+								
 								<hr>
-                                      <a  href="<?= site_url("tahapanPersiapan/tambah/").$tipe_ ?>" class="btn btn-primary btn-round ml-auto" style="float: right;">
+                                      <a  href="<?= site_url("tahapanPelaksanaan/tambah/").$tipe_ ?>" class="btn btn-primary btn-round ml-auto" style="float: right;">
 										<i class="fa fa-plus"></i>
 										Tambah Data
 									</a>
@@ -68,8 +70,8 @@
                                                     ?></td>
                                                     <td>
 														<li class="list-inline-item">
-															<a href="<?= site_url("tahapanPersiapan/ubah/").$tipe_."/".$d->idPersiapan?>" class="btn btn-primary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
-															<a href="<?= site_url("tahapanPersiapan/delete/").$tipe_."/".$d->idPersiapan?>" onClick="return confirm('Apa benar anda ingin menghapusnya?')" class="btn btn-info btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
+															<a href="<?= site_url("tahapanPelaksanaan/ubah/").$tipe_."/".$d->idPelaksanaan?>" class="btn btn-primary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
+															<a href="<?= site_url("tahapanPelaksanaan/delete/").$tipe_."/".$d->idPelaksanaan?>" onClick="return confirm('Apa benar anda ingin menghapusnya?')" class="btn btn-info btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
 														</li>
 													</td>
 												</tr>

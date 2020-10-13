@@ -7,13 +7,11 @@
 							<div class="card">
 								<div class="card-header">
                                     <h4 class="card-title">Pilih Tahapan:</h4> 
-                                    <a href="<?=site_url('tahapanPersiapan/data/penyerahanlokasi')?>" type="button" class="btn btn-<?php if($tipe_ == 'penyerahanlokasi'){ echo 'primary';} else{ echo 'info';}?>">Penyerahan Lokasi</a>
-									<a href="<?=site_url('tahapanPersiapan/data/spmk')?>" type="button" class="btn btn-<?php if($tipe_ == 'spmk'){ echo 'primary';} else{ echo 'info';}?>">SPMK (Surat Perintah Mulai Kerja)</a>
-                                    <a href="<?=site_url('tahapanPersiapan/data/rapatpersiapan')?>" type="button" class="btn btn-<?php if($tipe_ == 'rapatpersiapan'){ echo 'primary';} else{ echo 'info';}?>">Rapat Persiapan</a>
-                                    <a href="<?=site_url('tahapanPersiapan/data/pembayaranuangmuka')?>" type="button" class="btn btn-<?php if($tipe_ == 'pembayaranuangmuka'){ echo 'primary';} else{ echo 'info';}?>">Pembayaran Uang Muka</a>
-                                    <a href="<?=site_url('tahapanPersiapan/data/mobilisasi')?>" type="button" class="btn btn-<?php if($tipe_ == 'mobilisasi'){ echo 'primary';} else{ echo 'info';}?>">Mobilisasi</a>
-								<hr>
-                                      <a  href="<?= site_url("tahapanPersiapan/tambah/").$tipe_ ?>" class="btn btn-primary btn-round ml-auto" style="float: right;">
+									<a href="<?=site_url('tahapanPelapor/data/laporanharian')?>" type="button" class="btn btn-<?php if($tipe_ == 'laporanharian'){ echo 'primary';} else{ echo 'info';}?>">Laporan Harian</a>
+									<a href="<?=site_url('tahapanPelapor/data/laporanmingguan')?>" type="button" class="btn btn-<?php if($tipe_ == 'laporanmingguan'){ echo 'primary';} else{ echo 'info';}?>">Laporan Mingguan</a>
+                                    <a href="<?=site_url('tahapanPelapor/data/laporanbulanan')?>" type="button" class="btn btn-<?php if($tipe_ == 'laporanbulanan'){ echo 'primary';} else{ echo 'info';}?>">Laporan Bulanan</a>
+                                    <hr>
+                                      <a  href="<?= site_url("tahapanPelapor/tambah/").$tipe_ ?>" class="btn btn-primary btn-round ml-auto" style="float: right;">
 										<i class="fa fa-plus"></i>
 										Tambah Data
 									</a>
@@ -25,8 +23,6 @@
 												<tr>
                                                     <th>No</th>
                                                     <th>Uraian</th>
-													<th>Status</th>
-													<th>Keterangan</th>
 													<th>Tanggal</th>
 													<th>File</th>
 													<th>Aksi</th>
@@ -39,21 +35,12 @@
                                                 <tr>
                                                     <td><?= $no++ ?></td>
 													<td><?= $d->uraian ?></td>
-													<td><?= $d->status ?></td>
-                                                    <td><?php 
-                                                    
-                                                    if($d->status == "Tidak"){
-                                                        echo $d->keterangan;
-                                                    } else{
-                                                        echo "-";
-                                                    }
-                                                    
-                                                    ?></td>
+                                                   
 													<td><?= date_format(date_create($d->dateTime),"d/m/Y") ?></td>
 													
                                                         <td><?php 
                                                     
-                                                    if($d->status == "Ya" && $d->fileName != null){
+                                                    if($d->fileName != null){
                                                         ?>
                                                         <div class="aksifile">
                                                         <a download href="<?php echo base_url()."assets/file/".$d->fileName; ?>"  class="btn btn-primary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Download"><i class="fa fa-download"></i></a>
@@ -68,8 +55,8 @@
                                                     ?></td>
                                                     <td>
 														<li class="list-inline-item">
-															<a href="<?= site_url("tahapanPersiapan/ubah/").$tipe_."/".$d->idPersiapan?>" class="btn btn-primary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
-															<a href="<?= site_url("tahapanPersiapan/delete/").$tipe_."/".$d->idPersiapan?>" onClick="return confirm('Apa benar anda ingin menghapusnya?')" class="btn btn-info btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
+															<a href="<?= site_url("tahapanPelapor/ubah/").$tipe_."/".$d->idPelapor?>" class="btn btn-primary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
+															<a href="<?= site_url("tahapanPelapor/delete/").$tipe_."/".$d->idPelapor?>" onClick="return confirm('Apa benar anda ingin menghapusnya?')" class="btn btn-info btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
 														</li>
 													</td>
 												</tr>

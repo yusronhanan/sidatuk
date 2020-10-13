@@ -5,14 +5,14 @@
 					<div class="contoh" style="margin-bottom: 20px;">
 						<h3 style="margin-left: 10px;">Format Laporan</h3>
 							<img style="margin-left: 10px;" src="<?= base_url()?>assets/img/report.png" width="20px" height="20px">
-							<a href="<?= base_url()."assets/file/".$formatFile ?>" target="blank" name="contohFormat"><?= $formatFile ?></a>
+							<a href="<?= base_url()."assets/file/".$formatFile ?>" download name="contohFormat"><?= $formatFile ?></a>
 					</div>
 					<form method="post" action="<?= site_url('tahapanPersiapan/add/').$tipe_;?>" enctype="multipart/form-data">
 
                 <input type="hidden" name="tipe" value="<?= $tipe ?>">
                     <div class="form-group">
                         <label for="exampleInputPassword1">Uraian</label>
-						<textarea class="form-control" name="uraian" rows="2"></textarea>
+						<textarea class="form-control" required name="uraian" rows="2"></textarea>
                     </div>
 					<div class="form-group">
 						<label for="exampleInputPassword1">Ada Bukti?</label>
