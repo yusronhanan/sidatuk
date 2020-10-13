@@ -7,10 +7,16 @@ class Home extends CI_Controller {
     */
 	public function index()
 	{
-        $data =[
-            "main_view" => "v_dashboard"
-        ];
-		$this->load->view('v_layout',$data);
+        if ($this->session->userdata('logged_in')) {
+            $data =[
+                "main_view" => "v_dashboard"
+            ];
+            $this->load->view('v_layout',$data);
+        }else{
+            $this->session->set_flashdata('notif', 'Anda belum login');
+            redirect('auth');
+            
+          }
     }
     
     

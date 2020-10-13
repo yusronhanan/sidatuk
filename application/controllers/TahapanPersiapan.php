@@ -12,12 +12,19 @@ class TahapanPersiapan extends CI_Controller {
     }
 
     public function index(){
+        if ($this->session->userdata('logged_in')) {
         $tipe_ = "penyerahanlokasi";
         redirect('/tahapanpersiapan/data/'.$tipe_);
+        }else{
+            $this->session->set_flashdata('notif', 'Anda belum login');
+            redirect('auth');
+            
+          }
     }
 
     public function data($tipe_)
 	{
+        if ($this->session->userdata('logged_in')) {
         if($tipe_ == "penyerahanlokasi"){
             $tipe = "Penyerahan Lokasi";
         } else if($tipe_ == "spmk"){
@@ -35,7 +42,12 @@ class TahapanPersiapan extends CI_Controller {
             "data" => $this->M_home->getAllDataTahapan($tipe,"tahapanPersiapan"),
             "main_view" => "v_tahapanPersiapan"
         ];
-		$this->load->view('v_layout',$data);
+        $this->load->view('v_layout',$data);
+        }else{
+            $this->session->set_flashdata('notif', 'Anda belum login');
+            redirect('auth');
+            
+          }
     }
 
  
@@ -43,6 +55,7 @@ class TahapanPersiapan extends CI_Controller {
 
 
     public function tambah($tipe_){
+        if ($this->session->userdata('logged_in')) {
         $formatFile = "";
         $tipe = "";
         
@@ -69,10 +82,16 @@ class TahapanPersiapan extends CI_Controller {
             "formatFile" => $formatFile, // untuk format file
             "main_view" => "v_tambah_tahapanPersiapan"
         ];
-		$this->load->view('v_layout',$data);       
+        $this->load->view('v_layout',$data); 
+        }else{
+            $this->session->set_flashdata('notif', 'Anda belum login');
+            redirect('auth');
+            
+          }      
     }
 
     public function ubah($tipe_,$id){
+        if ($this->session->userdata('logged_in')) {
         $formatFile = "";
         $tipe = "";
         
@@ -100,13 +119,18 @@ class TahapanPersiapan extends CI_Controller {
             "data" => $this->M_home->getData(array("idPersiapan" => $id),"tahapanPersiapan")->row(),
             "main_view" => "v_ubah_tahapanPersiapan"
         ];
-		$this->load->view('v_layout',$data);       
+        $this->load->view('v_layout',$data); 
+        }else{
+            $this->session->set_flashdata('notif', 'Anda belum login');
+            redirect('auth');
+            
+          }      
     }
     public function add($tipe_)
     {
     //   $this->form_validation->set_rules('', '', '');
     //   if ($this->form_validation->run() == TRUE) {
-                
+                if ($this->session->userdata('logged_in')) {
                     $initialize = $this->upload->initialize(array(
                         'upload_path' => './assets/file/',
                         'allowed_types' => 'jpg|jpeg|png|pdf'
@@ -122,7 +146,11 @@ class TahapanPersiapan extends CI_Controller {
                             $this->session->set_flashdata('notif', 'Gagal tambah data');
                             redirect('tahapanPersiapan/data/'.$tipe_); /* need to modified */
                             }
-                   
+                   }else{
+            $this->session->set_flashdata('notif', 'Anda belum login');
+            redirect('auth');
+            
+          }
     //   } else {
     //           $this->session->set_flashdata('notif', 'One of required input is empty');
     //           redirect(''); /* need to modified */
@@ -133,7 +161,7 @@ class TahapanPersiapan extends CI_Controller {
     {
     //   $this->form_validation->set_rules('', '', '');
     //   if ($this->form_validation->run() == TRUE) {
-                
+                if ($this->session->userdata('logged_in')) {
                     $initialize = $this->upload->initialize(array(
                         'upload_path' => './assets/file/',
                         'allowed_types' => 'jpg|jpeg|png|pdf'
@@ -149,7 +177,11 @@ class TahapanPersiapan extends CI_Controller {
                             $this->session->set_flashdata('notif', 'Gagal ubah data');
                             redirect('tahapanPersiapan/data/'.$tipe_); /* need to modified */
                             }
-                    
+                }else{
+            $this->session->set_flashdata('notif', 'Anda belum login');
+            redirect('auth');
+            
+          }    
     //   } else {
     //           $this->session->set_flashdata('notif', 'One of required input is empty');
     //           redirect(''); /* need to modified */
@@ -158,6 +190,7 @@ class TahapanPersiapan extends CI_Controller {
 
     public function delete($tipe_, $id)
     {
+        if ($this->session->userdata('logged_in')) {
       if($this->M_tahapanPersiapan->delete($id)){
         $this->session->set_flashdata('type', 'success');
         $this->session->set_flashdata('notif', 'Sukses hapus data');
@@ -166,9 +199,15 @@ class TahapanPersiapan extends CI_Controller {
       }
       
       redirect('tahapanPersiapan/data/'.$tipe_); /* need to modified */
+      }else{
+            $this->session->set_flashdata('notif', 'Anda belum login');
+            redirect('auth');
+            
+          }
     }
 
     public function getTahapanPersiapan($tipe_){
+        if ($this->session->userdata('logged_in')) {
         if($tipe_ == "penyerahanlokasi"){
             $tipe = "Penyerahan Lokasi";
         } else if($tipe_ == "spmk"){
@@ -181,6 +220,10 @@ class TahapanPersiapan extends CI_Controller {
             $tipe = "Mobilisasi";
         }
         echo json_encode($this->M_home->getAllDataTahapan($tipe,"tahapanPersiapan"));
+        }else{
+            echo "anda tidak punya akses";
+            
+          }
     }
 }
 

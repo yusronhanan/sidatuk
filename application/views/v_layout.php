@@ -30,7 +30,7 @@
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="blue">
 				
-				<a href="index.html" class="logo">
+				<a href="<?= base_url() ?>" class="logo">
 					<h2 style="color: white;" alt="navbar brand" class="navbar-brand">SIDATUK</h2>
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -114,7 +114,7 @@
 				<div class="sidebar-content">
 					<ul class="nav nav-primary">
 						<li class="nav-item active">
-							<a data-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
+							<a data-toggle="collapse" href="<?= base_url() ?>" class="collapsed" aria-expanded="false">
 								<i class="fas fa-home"></i>
 								<p>Dashboard</p>
 							

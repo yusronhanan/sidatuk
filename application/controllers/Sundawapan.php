@@ -13,35 +13,53 @@ class Sundawapan extends CI_Controller {
 
     public function index()
 	{
+if ($this->session->userdata('logged_in')) {
         $data =[
             "data" => $this->M_home->getAllData("sundawapan"),
             "main_view" => "v_sundawapan"
         ];
-		$this->load->view('v_layout',$data);
+    $this->load->view('v_layout',$data);
+    }else{
+            $this->session->set_flashdata('notif', 'Anda belum login');
+            redirect('auth');
+            
+          }
     }
 
     public function tambah()
 	{
+if ($this->session->userdata('logged_in')) {
         $data =[
             "main_view" => "v_tambah_sundawapan"
         ];
-		$this->load->view('v_layout',$data);
+    $this->load->view('v_layout',$data);
+    }else{
+            $this->session->set_flashdata('notif', 'Anda belum login');
+            redirect('auth');
+            
+          }
   }
 
     public function ubah($id)
 	{
+if ($this->session->userdata('logged_in')) {
         $data =[
             "data" => $this->M_home->getData(array("idSundawapan" => $id), "sundawapan")->row(),
             "main_view" => "v_ubah_sundawapan"
         ];
-		$this->load->view('v_layout',$data);
+    $this->load->view('v_layout',$data);
+    }else{
+            $this->session->set_flashdata('notif', 'Anda belum login');
+            redirect('auth');
+            
+          }
     }
 
     public function add()
     {
     //   $this->form_validation->set_rules('', '', '');
     //   if ($this->form_validation->run() == TRUE) {
-                
+                if ($this->session->userdata('logged_in')) {
                     if ($this->M_sundawapan->add()) {
                       $this->session->set_flashdata('type', 'success');
                       $this->session->set_flashdata('notif', 'Sukses tambah data');
@@ -51,6 +69,11 @@ class Sundawapan extends CI_Controller {
                       $this->session->set_flashdata('notif', 'Gagal tambah data');
                       redirect('sundawapan'); /* need to modified */
                     }
+                   }else{
+            $this->session->set_flashdata('notif', 'Anda belum login');
+            redirect('auth');
+            
+          } 
     //   } else {
     //           $this->session->set_flashdata('notif', 'One of required input is empty');
     //           redirect(''); /* need to modified */
@@ -61,7 +84,7 @@ class Sundawapan extends CI_Controller {
     {
     //   $this->form_validation->set_rules('', '', '');
     //   if ($this->form_validation->run() == TRUE) {
-                
+                if ($this->session->userdata('logged_in')) {
                     if ($this->M_sundawapan->edit($id)) {
                       $this->session->set_flashdata('type', 'success');
                       $this->session->set_flashdata('notif', 'Sukses ubah data');
@@ -71,6 +94,11 @@ class Sundawapan extends CI_Controller {
                       $this->session->set_flashdata('notif', 'Gagal ubah data');
                       redirect('sundawapan'); /* need to modified */
                     }
+                    }else{
+            $this->session->set_flashdata('notif', 'Anda belum login');
+            redirect('auth');
+            
+          }
     //   } else {
     //           $this->session->set_flashdata('notif', 'One of required input is empty');
     //           redirect(''); /* need to modified */
@@ -79,6 +107,7 @@ class Sundawapan extends CI_Controller {
 
     public function delete($id)
     {
+if ($this->session->userdata('logged_in')) {
       if($this->M_sundawapan->delete($id)){
         $this->session->set_flashdata('type', 'success');
         $this->session->set_flashdata('notif', 'Sukses hapus data');
@@ -87,6 +116,11 @@ class Sundawapan extends CI_Controller {
       }
       
       redirect('sundawapan');
+      }else{
+            $this->session->set_flashdata('notif', 'Anda belum login');
+            redirect('auth');
+            
+          }
     }
 }
 

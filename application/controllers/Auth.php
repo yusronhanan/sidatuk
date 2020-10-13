@@ -15,9 +15,14 @@ class Auth extends CI_Controller {
         // $data =[
         //     "" => ""
         // ];
-		// $this->load->view('v_layout',$data);
-		$this->load->view('v_login');
-    
+    // $this->load->view('v_layout',$data);
+            if (!$this->session->userdata('logged_in')) {
+		            $this->load->view('v_login');
+            } else{
+              $this->session->set_flashdata('notif', 'Anda sudah login');
+              redirect('');
+              
+            }
     }
 
     public function login(){
