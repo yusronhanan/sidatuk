@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 11, 2020 at 06:20 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.2.33
+-- Generation Time: Oct 14, 2020 at 02:07 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -65,10 +66,9 @@ CREATE TABLE `irigasi` (
 --
 
 INSERT INTO `irigasi` (`idIrigasi`, `kodeTender`, `namaPaket`, `metodePengadaan`, `nilaiPagu`, `nilaiHPS`, `nilaiKontrak`, `tanggalPermohonanLelang`, `nomorPermohonanLelang`, `rencanaProsesPengadaan`, `tahapTender`, `mulaiLelangRencana`, `selesaiLelangRencana`, `mulaiLelangRealisasi`, `selesaiLelangRealisasi`, `alasanPerubahanJadwal`, `gagalLelang1`, `alasanGagalLelang1`, `mulaiJadwalLelangUlangRencana`, `selesaiJadwalLelangUlangRencana`, `mulaiJadwalLelangUlangRealisasi`, `selesaiJadwalLelangUlangRealisasi`, `alasanPerubahanJadwalLelangUlang`, `gagalLelang2`, `alasanGagalLelang2`, `penunjukanLangsung`, `nomorSPPBJTanggal`, `alasanSPPBJUndur`, `nomorSPKTanggal`, `alasanSPKUndur`) VALUES
-(1, '2892', 'sundawapan1', 'jkjkasjkd', 91873719, 8121819289, 91281928, '2020-12-01', '129818', 'jkasdkj', 'jadh jiadjal', '2020-12-01', '2020-12-31', '2020-12-31', '2020-01-31', 'asda', 'Tidak', ' asaa', '2020-11-06', '2020-11-06', '2020-10-30', '2020-10-31', 'as', 'Tidak', 'sasdas', ' asdasda', 'asdas', 'asdas', 'asdas', 'asdas'),
-(2, '0987', 'ini nama paket 2', 'ini metode pengadaan 2', 80000000, 98700000.34, 80000000, '2020-10-01', '', 'ini rencana proses pengadaan 2', 'ini tahap tender 2', '2020-10-22', '2020-10-24', '2020-10-22', '2020-10-24', 'ini alasan 2', 'Tidak', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', 'Tidak', '', '', '131121213312', 'kenapa ya', '8866672344', 'kenapa yas'),
-(6, '9810', '9118', 'metode oke', 92801019, 9882891928, 100, '2020-01-01', '9283919', '929999.23', 'oke', '2020-09-30', '2020-09-27', '2019-11-08', '2020-12-30', 'corona 2', 'ya', 'asik', '2020-12-31', '2020-01-31', '2020-10-17', '2020-10-13', 'corona', 'ya', 'pandemi', 'cek', '928182 - 28/09/2020', 'tidak diketahui', '89182 - 29/09/2020', 'tidak diketahui'),
-(7, '91218', '', 'jasdaj', 0, 1291, 0, '2019-10-28', '81298218', '', 'kjasjkdh', '0000-00-00', '0000-00-00', '2019-11-29', '2019-12-30', '', NULL, '', '2020-10-12', '2020-10-13', '0000-00-00', '0000-00-00', '', 'Tidak', '', '', '', '', '', '');
+(12, '53887014', 'Belanja Jasa Konsultansi Pengawasan (Supervision) DI Susukan Gede', 'Seleksi', 213157132, 1287687603, 34.221987987, '2020-10-13', '4', '15 Februari s.d 15 April 2020', 'Tender telah selesai', '2020-10-13', '2020-10-17', '2020-10-27', '2020-10-31', 'Ini perubahan', 'Tidak', '-', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', ' -', 'Tidak', '-', '-', 'Belum diterbitkan', '-', 'Belum diterbitkan', '-'),
+(13, '11970', 'Rehabilitasi Jaringan Irigasi D.I. Ciseureuh Cibeureum', 'Pengadaan Langsung', 200000, 200049, 127.1212, '2020-10-20', '40', '1 April s.d 30 April 2020', '-', '2020-10-13', '2020-10-27', '2020-11-07', '2020-11-29', '-', 'Tidak', '-', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', ' -', 'Tidak', '-', '-', '120012/12122020', '-', 'Belum diterbitkan', '-'),
+(14, '12309', 'Supervisi Pekerjaan Fisik Cikembang Tuntas\r\n', 'Tender', 24234234, 3242342, 2342432, '2020-10-15', '23123', 'Tender', 'Jalan', '2020-10-14', '2020-10-15', '2020-10-16', '2020-10-15', 'karena covid', 'Tidak', '-', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -114,7 +114,8 @@ CREATE TABLE `sarpras` (
 --
 
 INSERT INTO `sarpras` (`idSarpras`, `kodeTender`, `namaPaket`, `metodePengadaan`, `nilaiPagu`, `nilaiHPS`, `nilaiKontrak`, `tanggalPermohonanLelang`, `nomorPermohonanLelang`, `rencanaProsesPengadaan`, `tahapTender`, `mulaiLelangRencana`, `selesaiLelangRencana`, `mulaiLelangRealisasi`, `selesaiLelangRealisasi`, `alasanPerubahanJadwal`, `gagalLelang1`, `alasanGagalLelang1`, `mulaiJadwalLelangUlangRencana`, `selesaiJadwalLelangUlangRencana`, `mulaiJadwalLelangUlangRealisasi`, `selesaiJadwalLelangUlangRealisasi`, `alasanPerubahanJadwalLelangUlang`, `gagalLelang2`, `alasanGagalLelang2`, `penunjukanLangsung`, `nomorSPPBJTanggal`, `alasanSPPBJUndur`, `nomorSPKTanggal`, `alasanSPKUndur`) VALUES
-(2, '3113', 'asdas', 'jasdaj', 2312, 12306, 12312, '2020-10-31', '123123', '123das', 'asdasd', '2020-10-24', '2020-11-04', '2020-10-24', '2020-10-07', 'asdasd', 'Tidak', 'asdas ads', '2020-10-29', '2020-10-15', '2020-10-17', '2020-10-29', ' asdasd', 'Tidak', 'asdas', 'asdas', 'asdadas', 'adas', 'asdas', 'adasd');
+(2, '3113', 'Sapras UPTD Ciliwung', 'Tender ', 2312987973, 123067686, 12289.88, '2020-10-31', '123123', 'Tender', 'Berjalan', '2020-10-24', '2020-11-04', '2020-10-24', '2020-10-07', 'asdasd', 'Tidak', '-', '2020-10-29', '2020-10-15', '2020-10-17', '2020-10-29', '-', 'Tidak', '-', 'Kepala UPTD', '1290/1/1/2020', '-', '1290/1/1/2020', '-'),
+(3, '2129', 'Sapras UPTD Bandung', 'Tender ', 8264364, 1237687, 1231980, '2020-01-01', '12', 'Tender', 'Belum Tender', '2020-10-14', '2020-10-15', '2020-10-21', '2020-10-22', '1. Fasilitas tidak memadai', 'Ya', '1. Kesepakatan tidak ketemu', '2020-10-15', '2020-10-15', '2020-10-21', '2020-10-22', ' 1. Karena terdapat covid', 'Tidak', '-', 'Kepala UPTD', 'Belum', '1. Covid', 'Belum', '1. Covid');
 
 -- --------------------------------------------------------
 
@@ -160,15 +161,16 @@ CREATE TABLE `sundawapan` (
 --
 
 INSERT INTO `sundawapan` (`idSundawapan`, `kodeTender`, `namaPaket`, `metodePengadaan`, `nilaiPagu`, `nilaiHPS`, `nilaiKontrak`, `tanggalPermohonanLelang`, `nomorPermohonanLelang`, `rencanaProsesPengadaan`, `tahapTender`, `mulaiLelangRencana`, `selesaiLelangRencana`, `mulaiLelangRealisasi`, `selesaiLelangRealisasi`, `alasanPerubahanJadwal`, `gagalLelang1`, `alasanGagalLelang1`, `mulaiJadwalLelangUlangRencana`, `selesaiJadwalLelangUlangRencana`, `mulaiJadwalLelangUlangRealisasi`, `selesaiJadwalLelangUlangRealisasi`, `alasanPerubahanJadwalLelangUlang`, `gagalLelang2`, `alasanGagalLelang2`, `penunjukanLangsung`, `nomorSPPBJTanggal`, `alasanSPPBJUndur`, `nomorSPKTanggal`, `alasanSPKUndur`) VALUES
-(2, '', '', '', 0, 0, 0, '2020-10-15', '', '', '', '2020-10-17', '2020-10-07', '2020-10-02', '2020-10-16', '', NULL, '', '2020-10-07', '2020-10-21', '2020-10-17', '2020-10-07', ' ', NULL, '', '', '', '', '', '');
+(2, '53297014', 'Pekerjaan Penataan dan Revitalisasi Waduk Darma Kab. Kuningan', '', 120119535000, 114637913772, 9879877987.776, '2020-10-15', '', 'Tender', 'Pembukaan dan Evaluasi Penawaran File I: Administrasi dan Teknis', '2020-10-17', '2020-10-07', '2020-10-02', '2020-10-16', '\"1. menyesuaikan dengan ketentuan penjadwalan proses seleksi\r\n2. Finalisasi Evaluasi Dokumen Penawaran Teknis\r\n\"\r\n', 'Tidak', '-', '2020-10-07', '2020-10-21', '2020-10-17', '2020-10-07', ' -', 'Tidak', '-', '-', '-', '-', '-', '-'),
+(3, '123231', 'Pekerjaan Penataan dan Revitalisasi Situ Ciburuy Kab. Bandung Barat', 'Tender ', 38000000000, 23000000005, 120.86565, '2020-10-15', '12', 'Belum', 'Belum Tender', '2020-10-15', '2020-10-17', '2020-10-21', '2020-10-22', '1.  Covid\r\n2. Tidak ada', 'Ya', '1. Tidak sesuai kesepakatan', '2020-10-23', '2020-10-29', '2020-10-31', '2020-11-06', ' -', 'Tidak', '-', '-', 'Belum', '-', 'Belum', '-');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tahapanpelaksaan`
+-- Table structure for table `tahapanpelaksanaan`
 --
 
-CREATE TABLE `tahapanpelaksaan` (
+CREATE TABLE `tahapanpelaksanaan` (
   `idPelaksaan` int(11) NOT NULL,
   `tipe` varchar(200) NOT NULL,
   `uraian` text NOT NULL,
@@ -177,6 +179,22 @@ CREATE TABLE `tahapanpelaksaan` (
   `fileName` text DEFAULT NULL,
   `dateTime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tahapanpelaksanaan`
+--
+
+INSERT INTO `tahapanpelaksanaan` (`idPelaksaan`, `tipe`, `uraian`, `status`, `keterangan`, `fileName`, `dateTime`) VALUES
+(1, 'Pemeriksaan Bersama', 'Pemerikasaan bersama mengenai uptd pelelangan sungai citarum', 'Ya', NULL, 'WEEK_06-07__PROJECT_COST_MANAGEMENT3.pdf', '2020-10-14 11:56:23'),
+(2, 'Pengajuan Persyaratan untuk Material Kegiatan', 'Ini pengajuan', 'Tidak', 'covid', NULL, '2020-10-14 12:04:02'),
+(3, 'Pengajuan Persyaratan untuk Material Kegiatan', 'Pengajuan ke agent material', 'Ya', NULL, 'WEEK_06-07__PROJECT_COST_MANAGEMENT.pdf', '2020-10-14 12:04:25'),
+(4, 'Pemeriksaan Bersama', 'Pemeriksaan bersama tentang pembayaran uang muka', 'Tidak', 'Belum terbit', NULL, '2020-10-14 12:05:09'),
+(5, 'Pengawasan Mutu Konstruksi', 'Pngawasan mutu konstruksi di sungai citarum', 'Tidak', 'Belum terbit', NULL, '2020-10-14 12:05:32'),
+(6, 'Pengawasan Mutu Konstruksi', 'Pengawasan mutu konstruksi di wilayah sungai babakan', 'Ya', NULL, 'Tables - Atlantis Lite Bootstrap 4 Admin Dashboard (4).xlsx', '2020-10-14 12:05:59'),
+(7, 'Penerimaan dan Pembayaran Hasil Kerja', 'Penerimaan keuangan pembayaran', 'Tidak', 'Belum diterima', NULL, '2020-10-14 12:06:35'),
+(8, 'Penerimaan dan Pembayaran Hasil Kerja', 'Pembayaran kerja ke karyawan', 'Ya', NULL, 'BIDW - Week6 HFR.ppt', '2020-10-14 12:06:59'),
+(9, 'Kontrak Kritis', 'Kontrak kritis ke karyawan', 'Ya', NULL, 'DataTables example - File export.xlsx', '2020-10-14 12:07:21'),
+(10, 'Kontrak Kritis', 'Kontrak ke vendor', 'Tidak', 'Belum diterbitkan', NULL, '2020-10-14 12:07:36');
 
 -- --------------------------------------------------------
 
@@ -191,6 +209,18 @@ CREATE TABLE `tahapanpelapor` (
   `fileName` text NOT NULL,
   `dateTime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tahapanpelapor`
+--
+
+INSERT INTO `tahapanpelapor` (`idPelapor`, `tipe`, `uraian`, `fileName`, `dateTime`) VALUES
+(1, 'Laporan Harian', 'Laporan Harian Tanggal 20', 'detail_(1)2.pdf', '2020-10-14 11:47:57'),
+(2, 'Laporan Mingguan', 'Laporan mingguan pertama', 'Tables - Atlantis Lite Bootstrap 4 Admin Dashboard.xlsx', '2020-10-14 11:48:32'),
+(3, 'Laporan Bulanan', 'Laporan Januari', 'Tables - Atlantis Lite Bootstrap 4 Admin Dashboard (4).xlsx', '2020-10-14 11:48:50'),
+(4, 'Laporan Harian', 'Laporan Tanggal 21', 'debug.log', '2020-10-14 11:49:11'),
+(5, 'Laporan Mingguan', 'Laporan mingguan kedua', 'QuizNo2_1202184316 (2).docx', '2020-10-14 11:49:31'),
+(6, 'Laporan Bulanan', 'Laporan februari', 'Project_Charter.pdf', '2020-10-14 11:49:49');
 
 -- --------------------------------------------------------
 
@@ -207,6 +237,20 @@ CREATE TABLE `tahapanpenyelesaian` (
   `fileName` text DEFAULT NULL,
   `dateTime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tahapanpenyelesaian`
+--
+
+INSERT INTO `tahapanpenyelesaian` (`idPenyelesaian`, `tipe`, `uraian`, `status`, `keterangan`, `fileName`, `dateTime`) VALUES
+(1, 'Serah Terima Pertama', 'Serah terima ke kepala pusat', 'Tidak', 'Belum terbit', NULL, '2020-10-14 11:37:46'),
+(2, 'Serah Terima Pertama', 'Serah terima ke cabang', 'Ya', NULL, 'detail_(1).pdf', '2020-10-14 11:38:19'),
+(3, 'Pemeliharaan Hasil Kerja', 'Maintenance alat bandung', 'Tidak', 'Tidak ada', NULL, '2020-10-14 11:44:17'),
+(4, 'Serah Terima Akhir Pekerjaan', 'Serah terima akhir ke cabang bandung', 'Ya', NULL, '1920-1_Kartu_Ujian_UAS_13011844762.pdf', '2020-10-14 11:44:41'),
+(5, 'Serah Terima Pekerajaan Selesai Terhadap Pemilik', 'Kasih ke kepala cabang bandung', 'Ya', NULL, 'WEEK_06-07__PROJECT_COST_MANAGEMENT1.pdf', '2020-10-14 11:45:13'),
+(6, 'Pemeliharaan Hasil Kerja', 'Maintenance alat berat', 'Tidak', 'kjhkjads', NULL, '2020-10-14 11:46:13'),
+(7, 'Serah Terima Akhir Pekerjaan', 'Serah terima ke bagian kepala pusat', 'Ya', NULL, 'detail_(1)1.pdf', '2020-10-14 11:46:38'),
+(8, 'Serah Terima Pekerajaan Selesai Terhadap Pemilik', 'Serah terima ke pemilik uptd', 'Tidak', 'Belum terbit', NULL, '2020-10-14 11:50:36');
 
 -- --------------------------------------------------------
 
@@ -229,11 +273,15 @@ CREATE TABLE `tahapanpersiapan` (
 --
 
 INSERT INTO `tahapanpersiapan` (`idPersiapan`, `tipe`, `uraian`, `status`, `keterangan`, `fileName`, `dateTime`) VALUES
-(1, 'Penyerahan Lokasi', 'Ini uraian Ini uraian Ini uraian Ini uraian Ini uraian Ini uraian Ini uraian Ini uraian Ini uraian ', 'Tidak', 'asddde', NULL, '2020-10-11 15:42:37'),
+(1, 'Penyerahan Lokasi', 'Penyerahan lokais ke sungai ciliwung', 'Ya', NULL, 'WEEK_06-07__PROJECT_COST_MANAGEMENT.pdf', '2020-10-14 11:34:25'),
 (4, 'Penyerahan Lokasi', 'Tes input', 'Ya', '', '1920-1_Kartu_Ujian_UAS_1301184476.pdf', '2020-10-11 10:29:02'),
 (5, 'Penyerahan Lokasi', 'asdas', 'Ya', NULL, 'Uts_Sem4.PDF', '2020-10-11 15:42:05'),
-(6, 'Penyerahan Lokasi', '12sad', 'Ya', NULL, 'IDEA_CORONA_ILLUSTRASI.png', '2020-10-11 15:33:18'),
-(7, 'Penyerahan Lokasi', 'sada', 'Tidak', 'adas', NULL, '2020-10-11 15:34:56');
+(7, 'Penyerahan Lokasi', 'sada', 'Tidak', 'adas', NULL, '2020-10-11 15:34:56'),
+(9, 'Mobilisasi', 'Mobilisasi pelelangan sundawapan', 'Ya', NULL, 'CamScanner_10-12-2020_12_53_181.pdf', '2020-10-14 11:51:59'),
+(10, 'SPMK (Surat Perintah Mulai Kerja)', 'SPMK versi 3 untuk kepala UPTD', 'Tidak', 'Belum terbit', NULL, '2020-10-14 11:33:20'),
+(11, 'Rapat Persiapan', 'Rapat Persiapan seluruh anggota', 'Ya', NULL, 'SIDATUK_REPORT_PACKET_IRIGASI.pdf', '2020-10-14 11:35:13'),
+(12, 'Pembayaran Uang Muka', 'Pembayaran Revitilasisi', 'Tidak', 'Ini', NULL, '2020-10-14 11:47:25'),
+(13, 'SPMK (Surat Perintah Mulai Kerja)', 'SPMK Ver 2', 'Ya', NULL, 'WEEK_06-07__PROJECT_COST_MANAGEMENT2.pdf', '2020-10-14 11:51:38');
 
 -- --------------------------------------------------------
 
@@ -280,9 +328,9 @@ ALTER TABLE `sundawapan`
   ADD PRIMARY KEY (`idSundawapan`);
 
 --
--- Indexes for table `tahapanpelaksaan`
+-- Indexes for table `tahapanpelaksanaan`
 --
-ALTER TABLE `tahapanpelaksaan`
+ALTER TABLE `tahapanpelaksanaan`
   ADD PRIMARY KEY (`idPelaksaan`);
 
 --
@@ -317,43 +365,43 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `irigasi`
 --
 ALTER TABLE `irigasi`
-  MODIFY `idIrigasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idIrigasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `sarpras`
 --
 ALTER TABLE `sarpras`
-  MODIFY `idSarpras` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idSarpras` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `sundawapan`
 --
 ALTER TABLE `sundawapan`
-  MODIFY `idSundawapan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idSundawapan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `tahapanpelaksaan`
+-- AUTO_INCREMENT for table `tahapanpelaksanaan`
 --
-ALTER TABLE `tahapanpelaksaan`
-  MODIFY `idPelaksaan` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `tahapanpelaksanaan`
+  MODIFY `idPelaksaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tahapanpelapor`
 --
 ALTER TABLE `tahapanpelapor`
-  MODIFY `idPelapor` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idPelapor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tahapanpenyelesaian`
 --
 ALTER TABLE `tahapanpenyelesaian`
-  MODIFY `idPenyelesaian` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idPenyelesaian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tahapanpersiapan`
 --
 ALTER TABLE `tahapanpersiapan`
-  MODIFY `idPersiapan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idPersiapan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `user`
