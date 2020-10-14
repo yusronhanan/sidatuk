@@ -14,7 +14,7 @@
 								</div>
 								<div class="card-body">
 									<div class="table-responsive">
-										<table id="basic-datatables" class="display table table-bordered table-hover"  >
+										<table id="paket-datatables" class="display table table-bordered table-hover"  >
 											<thead>
 												<tr>
                                                     <th rowspan="2">No</th>

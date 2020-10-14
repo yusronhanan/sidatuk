@@ -23,6 +23,8 @@
 	<link rel="stylesheet" href="<?= base_url() ?>assets/css/atlantis.min.css">
 
 	<link rel="stylesheet" href="<?= base_url() ?>assets/sweetalert/sweetalert2.min.css">
+
+	
 </head>
 <body>
 	<div class="wrapper">
@@ -114,7 +116,7 @@
 				<div class="sidebar-content">
 					<ul class="nav nav-primary">
 						<li class="nav-item active">
-							<a data-toggle="collapse" href="<?= base_url() ?>" class="collapsed" aria-expanded="false">
+							<a  href="<?= base_url() ?>" class="collapsed" >
 								<i class="fas fa-home"></i>
 								<p>Dashboard</p>
 							
@@ -271,10 +273,10 @@
 
 	<script src="<?= base_url() ?>assets/sweetalert/sweetalert2.min.js"></script>
 
+
+
 	<script>
-	$(document).ready(function() {
-		$('#basic-datatables').DataTable();
-	} );
+	
 
 	function notifAlert(notif,type){
 	if(notif != ""){
@@ -286,50 +288,7 @@
 		});
 	}
 }
-		Circles.create({
-			id:'circles-1',
-			radius:45,
-			value:60,
-			maxValue:100,
-			width:7,
-			text: 5,
-			colors:['#f1f1f1', '#FF9E27'],
-			duration:400,
-			wrpClass:'circles-wrp',
-			textClass:'circles-text',
-			styleWrapper:true,
-			styleText:true
-		})
-
-		Circles.create({
-			id:'circles-2',
-			radius:45,
-			value:70,
-			maxValue:100,
-			width:7,
-			text: 36,
-			colors:['#f1f1f1', '#2BB930'],
-			duration:400,
-			wrpClass:'circles-wrp',
-			textClass:'circles-text',
-			styleWrapper:true,
-			styleText:true
-		})
-
-		Circles.create({
-			id:'circles-3',
-			radius:45,
-			value:40,
-			maxValue:100,
-			width:7,
-			text: 12,
-			colors:['#f1f1f1', '#F25961'],
-			duration:400,
-			wrpClass:'circles-wrp',
-			textClass:'circles-text',
-			styleWrapper:true,
-			styleText:true
-		})
+		
 
 		var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
 
@@ -390,5 +349,31 @@
 	notifAlert("<?= $this->session->flashdata('notif'); ?>","<?= $type ?>");
 	</script>
 <?php } ?>
+
+<!-- download -->
+
+<script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.flash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.print.min.js"></script>
+	<script>
+	$(document).ready(function() {
+		$('#basic-datatables').DataTable();
+		$('#paket-datatables').DataTable( {
+			dom: 'Bfrtip',
+			buttons: [
+			{   extend: 'excel', 
+				className: 'btn-primary', 
+					exportOptions: {
+                    columns: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27,28,29 ]
+                } },
+			]
+		} );
+		
+	} );
+	</script>
 </body>
 </html>
