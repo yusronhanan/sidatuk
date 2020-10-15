@@ -1,9 +1,9 @@
 <div class="page-inner">
 					<div class="page-header">
-						<h4 class="page-title">Input Data Tahapan <?= $tipe ?></h4>
+						<h4 class="page-title">Input Data Progress</h4>
 					</div>
 				
-					<form method="post" action="<?= site_url('tahapanPelapor/add/').$tipe_;?>" enctype="multipart/form-data">
+				<form method="post" action="" enctype="multipart/form-data">
 
                 <input type="hidden" name="tipe" value="<?= $tipe ?>">
                     <div class="form-group">

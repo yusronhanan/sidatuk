@@ -182,7 +182,9 @@ iframe {
   align-items: center;
   padding: 15px;
   
-  background-color: #1565C0;
+	background: url(../img/gambar.png);
+	background-repeat: no-repeat;
+  background-size: 1280px 800px;
 }
 
 
@@ -251,7 +253,7 @@ iframe {
   top: -1px;
   left: -1px;
   pointer-events: none;
-  border: 1px solid #57b846;
+  border: 1px solid #1565C0;
   border-radius: 3px;
 
   visibility: hidden;
@@ -370,7 +372,7 @@ iframe {
 }
 
 .input-checkbox100:checked + .label-checkbox100::before {
-  color: #57b846;
+  color: #1565C0;
 }
 
 

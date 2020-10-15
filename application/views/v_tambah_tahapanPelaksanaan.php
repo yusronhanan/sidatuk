@@ -2,11 +2,7 @@
 					<div class="page-header">
 						<h4 class="page-title">Input Data Tahapan <?= $tipe ?></h4>
 					</div>
-					<div class="contoh" style="margin-bottom: 20px;">
-						<h3 style="margin-left: 10px;">Format Laporan</h3>
-							<img style="margin-left: 10px;" src="<?= base_url()?>assets/img/report.png" width="20px" height="20px">
-							<a href="<?= base_url()."assets/file/".$formatFile ?>" download name="contohFormat"><?= $formatFile ?></a>
-					</div>
+				
 					<form method="post" action="<?= site_url('tahapanPelaksanaan/add/').$tipe_;?>" enctype="multipart/form-data">
 
                 <input type="hidden" name="tipe" value="<?= $tipe ?>">

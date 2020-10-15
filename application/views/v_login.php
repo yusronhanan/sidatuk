@@ -35,13 +35,15 @@
 			<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
 				<form method="post" action="<?= site_url('auth/login')?>" class="login100-form validate-form flex-sb flex-w">
 					<span class="login100-form-title p-b-32" style="text-align: center;">
-						SIDATUK Login
+						SIDATUK
+						<br>
+						<small>Sistem Pengendalian Mutu Konstruksi</small>
 					</span>
 
 					<span class="txt1 p-b-11">
-						email
+						NIP
 					</span>
-					<div class="wrap-input100 validate-input m-b-36" data-validate = "Email is required">
+					<div class="wrap-input100 validate-input m-b-36" data-validate = "NIP is required">
 						<input class="input100" type="text" name="email" >
 						<span class="focus-input100"></span>
 					</div>
