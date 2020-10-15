@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 14, 2020 at 02:07 PM
+-- Generation Time: Oct 15, 2020 at 04:16 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -68,7 +68,8 @@ CREATE TABLE `irigasi` (
 INSERT INTO `irigasi` (`idIrigasi`, `kodeTender`, `namaPaket`, `metodePengadaan`, `nilaiPagu`, `nilaiHPS`, `nilaiKontrak`, `tanggalPermohonanLelang`, `nomorPermohonanLelang`, `rencanaProsesPengadaan`, `tahapTender`, `mulaiLelangRencana`, `selesaiLelangRencana`, `mulaiLelangRealisasi`, `selesaiLelangRealisasi`, `alasanPerubahanJadwal`, `gagalLelang1`, `alasanGagalLelang1`, `mulaiJadwalLelangUlangRencana`, `selesaiJadwalLelangUlangRencana`, `mulaiJadwalLelangUlangRealisasi`, `selesaiJadwalLelangUlangRealisasi`, `alasanPerubahanJadwalLelangUlang`, `gagalLelang2`, `alasanGagalLelang2`, `penunjukanLangsung`, `nomorSPPBJTanggal`, `alasanSPPBJUndur`, `nomorSPKTanggal`, `alasanSPKUndur`) VALUES
 (12, '53887014', 'Belanja Jasa Konsultansi Pengawasan (Supervision) DI Susukan Gede', 'Seleksi', 213157132, 1287687603, 34.221987987, '2020-10-13', '4', '15 Februari s.d 15 April 2020', 'Tender telah selesai', '2020-10-13', '2020-10-17', '2020-10-27', '2020-10-31', 'Ini perubahan', 'Tidak', '-', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', ' -', 'Tidak', '-', '-', 'Belum diterbitkan', '-', 'Belum diterbitkan', '-'),
 (13, '11970', 'Rehabilitasi Jaringan Irigasi D.I. Ciseureuh Cibeureum', 'Pengadaan Langsung', 200000, 200049, 127.1212, '2020-10-20', '40', '1 April s.d 30 April 2020', '-', '2020-10-13', '2020-10-27', '2020-11-07', '2020-11-29', '-', 'Tidak', '-', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', ' -', 'Tidak', '-', '-', '120012/12122020', '-', 'Belum diterbitkan', '-'),
-(14, '12309', 'Supervisi Pekerjaan Fisik Cikembang Tuntas\r\n', 'Tender', 24234234, 3242342, 2342432, '2020-10-15', '23123', 'Tender', 'Jalan', '2020-10-14', '2020-10-15', '2020-10-16', '2020-10-15', 'karena covid', 'Tidak', '-', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(14, '12309', 'Supervisi Pekerjaan Fisik Cikembang Tuntas\r\n', 'Tender', 24234234, 3242342, 2342432, '2020-10-15', '23123', 'Tender', 'Jalan', '2020-10-14', '2020-10-15', '2020-10-16', '2020-10-15', 'karena covid', 'Tidak', '-', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(15, '3132', 'dassdas', 'sadas', 12290, 2304, 76567, '2020-10-15', '12', 'Tender', 'Belum Tender', '2020-01-01', '2020-01-02', '0000-00-00', '0000-00-00', '-', 'Tidak', '-', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', ' -', 'Tidak', '-', '-', '-', '-', '-', '-');
 
 -- --------------------------------------------------------
 
@@ -281,7 +282,8 @@ INSERT INTO `tahapanpersiapan` (`idPersiapan`, `tipe`, `uraian`, `status`, `kete
 (10, 'SPMK (Surat Perintah Mulai Kerja)', 'SPMK versi 3 untuk kepala UPTD', 'Tidak', 'Belum terbit', NULL, '2020-10-14 11:33:20'),
 (11, 'Rapat Persiapan', 'Rapat Persiapan seluruh anggota', 'Ya', NULL, 'SIDATUK_REPORT_PACKET_IRIGASI.pdf', '2020-10-14 11:35:13'),
 (12, 'Pembayaran Uang Muka', 'Pembayaran Revitilasisi', 'Tidak', 'Ini', NULL, '2020-10-14 11:47:25'),
-(13, 'SPMK (Surat Perintah Mulai Kerja)', 'SPMK Ver 2', 'Ya', NULL, 'WEEK_06-07__PROJECT_COST_MANAGEMENT2.pdf', '2020-10-14 11:51:38');
+(13, 'SPMK (Surat Perintah Mulai Kerja)', 'SPMK Ver 2', 'Ya', NULL, 'WEEK_06-07__PROJECT_COST_MANAGEMENT2.pdf', '2020-10-14 11:51:38'),
+(14, 'Mobilisasi', 'gyujtuy', 'Ya', NULL, '1920-1_Kartu_Ujian_UAS_13011844762.pdf', '2020-10-14 13:10:10');
 
 -- --------------------------------------------------------
 
@@ -293,7 +295,7 @@ CREATE TABLE `user` (
   `idUser` int(11) NOT NULL,
   `nip` varchar(200) NOT NULL,
   `nama` text NOT NULL,
-  `email` text NOT NULL,
+  `jabatan` text NOT NULL,
   `password` text NOT NULL,
   `role` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -302,8 +304,15 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`idUser`, `nip`, `nama`, `email`, `password`, `role`) VALUES
-(1, '9087', 'Dzaki', 'dzaki@gmail.com', 'ebae2ccc3fe07662bb337a96c883954f', 'user');
+INSERT INTO `user` (`idUser`, `nip`, `nama`, `jabatan`, `password`, `role`) VALUES
+(1, '19710813 199703 1 007', 'Dikky Achmad Sidik, ST, MT', 'Kepala Dinas', 'dikky', 'user'),
+(2, '19690416 200502 1 001', 'Bambang Imanudin ST,.MT', 'Kepala Bidang Bina Konstruksi', 'bambang\r\n', 'user'),
+(3, '19760604 200801 1 003', 'DIKDIK AKHMAD SODIKIN, ST', 'Kasie Konstruksi Irigasi', 'dikdik', 'user'),
+(4, '19780822 200604 2 009', 'LUSIE MUSIANTY ST.,MPSDA', 'Kasie Konstruksi Sundawapan', 'lusie', 'user'),
+(5, '19640219 199303 1 004', 'TAUFIK, ST', 'Kasie Tata Teknik', 'taufik', 'user\r\n'),
+(6, '19641102 199012 1 002', 'Ir. AZHARI DWIKORA, Sp', 'Kepala Bidang Bina Operasi dan Pemeliharaan', 'azhari', 'user'),
+(7, '19660517 199002 1 003', 'H. USMAN, ST., MM', 'Kepala Bidang Bina Manfaat', 'usman', 'user'),
+(8, '19651002 199111 1 001', 'TOTO DWIYANTO, SST, MT', 'Kepala UPTD PSDA WS. Cimanuk-Cisanggung', 'toto', 'user');
 
 --
 -- Indexes for dumped tables
@@ -365,7 +374,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `irigasi`
 --
 ALTER TABLE `irigasi`
-  MODIFY `idIrigasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `idIrigasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `sarpras`
@@ -401,13 +410,13 @@ ALTER TABLE `tahapanpenyelesaian`
 -- AUTO_INCREMENT for table `tahapanpersiapan`
 --
 ALTER TABLE `tahapanpersiapan`
-  MODIFY `idPersiapan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idPersiapan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
