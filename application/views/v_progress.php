@@ -1,12 +1,12 @@
 <div class="page-inner">
 					<div class="page-header">
-						<h4 class="page-title">Tahapan <?= $tipe ?></h4>
+						<h4 class="page-title">Progress</h4>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-header">
-                                      <a  href="" class="btn btn-primary btn-round ml-auto" style="float: right;">
+                                      <a  href="<?= site_url("progress/tambah")?>" class="btn btn-primary btn-round ml-auto" style="float: right;">
 										<i class="fa fa-plus"></i>
 										Tambah Data
 									</a>
@@ -50,8 +50,8 @@
                                                     ?></td>
                                                     <td>
 														<li class="list-inline-item">
-															<a href="<?= site_url("tahapanPelapor/ubah/").$tipe_."/".$d->idPelapor?>" class="btn btn-primary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
-															<a href="<?= site_url("tahapanPelapor/delete/").$tipe_."/".$d->idPelapor?>" onClick="return confirm('Apa benar anda ingin menghapusnya?')" class="btn btn-info btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
+															<a href="<?= site_url("progress/ubah/").$d->idProgress?>" class="btn btn-primary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
+															<a href="<?= site_url("progress/delete/").$d->idProgress?>" onClick="return confirm('Apa benar anda ingin menghapusnya?')" class="btn btn-info btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
 														</li>
 													</td>
 												</tr>

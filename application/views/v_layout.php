@@ -92,7 +92,7 @@
 												?>
 												<br>
 												<?= 
-												$this->session->userdata('email');
+												$this->session->userdata('jabatan');
 												?></p>
 												<!-- <a href="#" class="btn btn-xs btn-secondary btn-sm">View Profile</a> -->
 											</div>
@@ -186,7 +186,7 @@
 							</div>
 						</li>
 						<li class="nav-item">
-							<a data-toggle="collapse" href="#forms">
+							<a  href="<?= site_url("progress") ?>">
 								<i class="fas fa-pen-square"></i>
 								<p>Progress</p>
 							</a>

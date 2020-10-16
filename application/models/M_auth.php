@@ -13,7 +13,7 @@ class M_auth extends CI_Model {
         $data = array(
             'nip' => $this->input->post('nip'),
             'name' => $this->input->post('name'),
-            'email' => $this->input->post('email'),
+            'jabatan' => $this->input->post('jabatan'),
             'password' => $this->input->post('password'),
             'role' => $this->input->post('role')
         );
@@ -25,16 +25,16 @@ class M_auth extends CI_Model {
     public function login()
     {
         $data = array(
-            'email' => $this->input->post('email'),
-            'password' => md5($this->input->post('password'))
+            'nip' => $this->input->post('nip'),
+            'password' => $this->input->post('password')
         );
         $query = $this->db->where($data)->get('user');
 		return ($query->num_rows() > 0); /* if exist return true, false otherwise  */
     }
 
-    public function checkEmail($email)
+    public function checkNIP($nip)
     {
-        $query = $this->db->where('email',$email)->get('user');
+        $query = $this->db->where('nip',$nip)->get('user');
 		return ($query->num_rows() > 0); /* if exist return true, false otherwise  */
     }
 }

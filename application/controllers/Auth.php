@@ -26,18 +26,18 @@ class Auth extends CI_Controller {
     }
 
     public function login(){
-        $this->form_validation->set_rules('email', 'Email', 'required');
+        $this->form_validation->set_rules('nip', 'NIP', 'required');
         $this->form_validation->set_rules('password', 'Password', 'required');
         
         
         if ($this->form_validation->run() == TRUE) {
           if($this->M_auth->login()){
-                 $user = $this->M_home->getData(array("email"=>$this->input->post("email")), "user")->row();
+                 $user = $this->M_home->getData(array("nip"=>$this->input->post("nip")), "user")->row();
                   $session_data = array(
                     'id' => $user->idUser,
                     'nip' => $user->nip,
                     'nama' => $user->nama,
-                    'email' => $user->email,
+                    'jabatan' => $user->jabatan,
                     'role' => $user->role,
                     'logged_in' => true /* logged in means, the user success logged_in = true */
                   );
