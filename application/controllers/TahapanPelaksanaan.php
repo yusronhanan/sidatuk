@@ -14,7 +14,7 @@ class TahapanPelaksanaan extends CI_Controller {
     public function index(){
 if ($this->session->userdata('logged_in')) {
         $tipe_ = "pemeriksaanbersama";
-        redirect('/tahapanpelaksanaan/data/'.$tipe_);
+        redirect('/tahapanPelaksanaan/data/'.$tipe_);
         }else{
             $this->session->set_flashdata('notif', 'Anda belum login');
             redirect('auth');
@@ -39,7 +39,7 @@ if ($this->session->userdata('logged_in')) {
         $data =[
             "tipe_" => $tipe_,
             "tipe"  => $tipe,
-            "data" => $this->M_home->getAllDataTahapan($tipe,"tahapanPelaksanaan"),
+            "data" => $this->M_home->getAllDataTahapan($tipe,"tahapanpelaksanaan"),
             "main_view" => "v_tahapanPelaksanaan"
         ];
         $this->load->view('v_layout',$data);
@@ -116,7 +116,7 @@ if ($this->session->userdata('logged_in')) {
             "tipe_" => $tipe_,
             "tipe"  => $tipe, // untuk input hidden
             "formatFile" => $formatFile, // untuk format file
-            "data" => $this->M_home->getData(array("idPelaksanaan" => $id),"tahapanPelaksanaan")->row(),
+            "data" => $this->M_home->getData(array("idPelaksanaan" => $id),"tahapanpelaksanaan")->row(),
             "main_view" => "v_ubah_tahapanPelaksanaan"
         ];
         $this->load->view('v_layout',$data);  
@@ -219,7 +219,7 @@ if ($this->session->userdata('logged_in')) {
         } else if($tipe_ == "kontrakkritis"){
             $tipe = "Kontrak Kritis";
         }
-        echo json_encode($this->M_home->getAllDataTahapan($tipe,"tahapanPelaksanaan"));
+        echo json_encode($this->M_home->getAllDataTahapan($tipe,"tahapanpelaksanaan"));
         }else{
             echo "anda tidak punya akses.";
             

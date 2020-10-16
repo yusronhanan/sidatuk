@@ -14,7 +14,7 @@ class TahapanPenyelesaian extends CI_Controller {
     public function index(){
         if ($this->session->userdata('logged_in')) {
         $tipe_ = "serahterimapertama";
-        redirect('/tahapanpenyelesaian/data/'.$tipe_);
+        redirect('/tahapanPenyelesaian/data/'.$tipe_);
         }else{
             $this->session->set_flashdata('notif', 'Anda belum login');
             redirect('auth');
@@ -37,7 +37,7 @@ class TahapanPenyelesaian extends CI_Controller {
         $data =[
             "tipe_" => $tipe_,
             "tipe"  => $tipe,
-            "data" => $this->M_home->getAllDataTahapan($tipe,"tahapanPenyelesaian"),
+            "data" => $this->M_home->getAllDataTahapan($tipe,"tahapanpenyelesaian"),
             "main_view" => "v_tahapanPenyelesaian"
         ];
         $this->load->view('v_layout',$data);
@@ -110,7 +110,7 @@ class TahapanPenyelesaian extends CI_Controller {
             "tipe_" => $tipe_,
             "tipe"  => $tipe, // untuk input hidden
             "formatFile" => $formatFile, // untuk format file
-            "data" => $this->M_home->getData(array("idPenyelesaian" => $id),"tahapanPenyelesaian")->row(),
+            "data" => $this->M_home->getData(array("idPenyelesaian" => $id),"tahapanpenyelesaian")->row(),
             "main_view" => "v_ubah_tahapanPenyelesaian"
         ];
         $this->load->view('v_layout',$data);    
@@ -211,7 +211,7 @@ class TahapanPenyelesaian extends CI_Controller {
         } else if($tipe_ == "serahterimapekerjaanselesai"){
             $tipe = "Serah Terima Pekerajaan Selesai Terhadap Pemilik";
         } 
-        echo json_encode($this->M_home->getAllDataTahapan($tipe,"tahapanPenyelesaian"));
+        echo json_encode($this->M_home->getAllDataTahapan($tipe,"tahapanpenyelesaian"));
         }else{
             echo "anda tidak punya akses.";
             

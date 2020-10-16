@@ -19,7 +19,7 @@ class Home extends CI_Controller {
         if ($this->session->userdata('logged_in')) {
             $data =[ 
                 "jml_paket" => count($this->M_home->getAllData("irigasi")) +count($this->M_home->getAllData("sundawapan")) + count($this->M_home->getAllData("sarpras")),
-                "jml_tahapan" => count($this->M_home->getAllData("tahapanPersiapan")) + count($this->M_home->getAllData("tahapanPelaksanaan")) + count($this->M_home->getAllData("tahapanPenyelesaian")) + count($this->M_home->getAllData("tahapanPelapor")),
+                "jml_tahapan" => count($this->M_home->getAllData("tahapanpersiapan")) + count($this->M_home->getAllData("tahapanpelaksanaan")) + count($this->M_home->getAllData("tahapanpenyelesaian")) + count($this->M_home->getAllData("tahapanpelapor")),
                 // "jml_progress" => count($this->M_home->getAllData("progress")),
                 "main_view" => "v_dashboard"
             ];

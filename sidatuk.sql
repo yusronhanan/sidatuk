@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 15, 2020 at 04:16 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.3
+-- Generation Time: Oct 16, 2020 at 11:28 AM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.2.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -70,6 +69,31 @@ INSERT INTO `irigasi` (`idIrigasi`, `kodeTender`, `namaPaket`, `metodePengadaan`
 (13, '11970', 'Rehabilitasi Jaringan Irigasi D.I. Ciseureuh Cibeureum', 'Pengadaan Langsung', 200000, 200049, 127.1212, '2020-10-20', '40', '1 April s.d 30 April 2020', '-', '2020-10-13', '2020-10-27', '2020-11-07', '2020-11-29', '-', 'Tidak', '-', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', ' -', 'Tidak', '-', '-', '120012/12122020', '-', 'Belum diterbitkan', '-'),
 (14, '12309', 'Supervisi Pekerjaan Fisik Cikembang Tuntas\r\n', 'Tender', 24234234, 3242342, 2342432, '2020-10-15', '23123', 'Tender', 'Jalan', '2020-10-14', '2020-10-15', '2020-10-16', '2020-10-15', 'karena covid', 'Tidak', '-', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (15, '3132', 'dassdas', 'sadas', 12290, 2304, 76567, '2020-10-15', '12', 'Tender', 'Belum Tender', '2020-01-01', '2020-01-02', '0000-00-00', '0000-00-00', '-', 'Tidak', '-', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', ' -', 'Tidak', '-', '-', '-', '-', '-', '-');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `progress`
+--
+
+CREATE TABLE `progress` (
+  `idProgress` int(11) NOT NULL,
+  `uraian` text NOT NULL,
+  `fileName` text NOT NULL,
+  `dateTime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `progress`
+--
+
+INSERT INTO `progress` (`idProgress`, `uraian`, `fileName`, `dateTime`) VALUES
+(1, 'Laporan Harian Tanggal 20', 'detail_(1)2.pdf', '2020-10-14 11:47:57'),
+(2, 'Laporan mingguan pertamaas', 'Tables - Atlantis Lite Bootstrap 4 Admin Dashboard.xlsx', '2020-10-16 09:00:18'),
+(3, 'Laporan Januaris', 'Tables - Atlantis Lite Bootstrap 4 Admin Dashboard (4).xlsx', '2020-10-16 09:00:07'),
+(4, 'Laporan Tanggal 21', 'debug.log', '2020-10-14 11:49:11'),
+(5, 'Laporan mingguan kedua', 'QuizNo2_1202184316 (2).docx', '2020-10-14 11:49:31'),
+(6, 'Laporan februari', 'Project_Charter.pdf', '2020-10-14 11:49:49');
 
 -- --------------------------------------------------------
 
@@ -325,6 +349,12 @@ ALTER TABLE `irigasi`
   ADD PRIMARY KEY (`idIrigasi`);
 
 --
+-- Indexes for table `progress`
+--
+ALTER TABLE `progress`
+  ADD PRIMARY KEY (`idProgress`);
+
+--
 -- Indexes for table `sarpras`
 --
 ALTER TABLE `sarpras`
@@ -375,6 +405,12 @@ ALTER TABLE `user`
 --
 ALTER TABLE `irigasi`
   MODIFY `idIrigasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `progress`
+--
+ALTER TABLE `progress`
+  MODIFY `idProgress` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `sarpras`
