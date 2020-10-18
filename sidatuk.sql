@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 16, 2020 at 11:28 AM
+-- Generation Time: Oct 18, 2020 at 02:34 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.33
 
@@ -196,7 +196,7 @@ INSERT INTO `sundawapan` (`idSundawapan`, `kodeTender`, `namaPaket`, `metodePeng
 --
 
 CREATE TABLE `tahapanpelaksanaan` (
-  `idPelaksaan` int(11) NOT NULL,
+  `idPelaksanaan` int(11) NOT NULL,
   `tipe` varchar(200) NOT NULL,
   `uraian` text NOT NULL,
   `status` varchar(200) NOT NULL,
@@ -209,7 +209,7 @@ CREATE TABLE `tahapanpelaksanaan` (
 -- Dumping data for table `tahapanpelaksanaan`
 --
 
-INSERT INTO `tahapanpelaksanaan` (`idPelaksaan`, `tipe`, `uraian`, `status`, `keterangan`, `fileName`, `dateTime`) VALUES
+INSERT INTO `tahapanpelaksanaan` (`idPelaksanaan`, `tipe`, `uraian`, `status`, `keterangan`, `fileName`, `dateTime`) VALUES
 (1, 'Pemeriksaan Bersama', 'Pemerikasaan bersama mengenai uptd pelelangan sungai citarum', 'Ya', NULL, 'WEEK_06-07__PROJECT_COST_MANAGEMENT3.pdf', '2020-10-14 11:56:23'),
 (2, 'Pengajuan Persyaratan untuk Material Kegiatan', 'Ini pengajuan', 'Tidak', 'covid', NULL, '2020-10-14 12:04:02'),
 (3, 'Pengajuan Persyaratan untuk Material Kegiatan', 'Pengajuan ke agent material', 'Ya', NULL, 'WEEK_06-07__PROJECT_COST_MANAGEMENT.pdf', '2020-10-14 12:04:25'),
@@ -370,7 +370,7 @@ ALTER TABLE `sundawapan`
 -- Indexes for table `tahapanpelaksanaan`
 --
 ALTER TABLE `tahapanpelaksanaan`
-  ADD PRIMARY KEY (`idPelaksaan`);
+  ADD PRIMARY KEY (`idPelaksanaan`);
 
 --
 -- Indexes for table `tahapanpelapor`
@@ -428,7 +428,7 @@ ALTER TABLE `sundawapan`
 -- AUTO_INCREMENT for table `tahapanpelaksanaan`
 --
 ALTER TABLE `tahapanpelaksanaan`
-  MODIFY `idPelaksaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idPelaksanaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tahapanpelapor`
