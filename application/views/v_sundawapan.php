@@ -43,6 +43,7 @@
 													<th rowspan="2">Nomor SPK dan Tanggal </th>
 													<th rowspan="2">Alasan SPK diundur </th>
 													<th rowspan="2">Aksi</th>
+													<th rowspan="2">Menu </th>
 													
                                                 </tr>
                                                 <tr>
@@ -97,6 +98,25 @@
 														<li class="list-inline-item">
 															<a href="<?= site_url('sundawapan/ubah/').$d->idSundawapan ?>" class="btn btn-primary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
 															<a href="<?= site_url('sundawapan/delete/').$d->idSundawapan ?>"  onClick="return confirm('Apa benar anda ingin menghapusnya?')"  class="btn btn-info btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
+														</li>
+													</td>
+													<td>
+														<li class="list-inline-item">
+															<div class="form-group">
+															<button class="btn btn-primary btn-sm">Tahapan Persiapan</button> 
+															</div>
+															<div class="form-group">
+															<button class="btn btn-info btn-sm" >Tahapan Pelaksanaan</button>
+															</div>
+															<div class="form-group"> 
+															<button class="btn btn-primary btn-sm" >Tahapan Penyelesaian</button> 
+															</div>
+															<div class="form-group">
+															<button class="btn btn-info btn-sm" >Tahapan Pelapor</button> 
+															</div>
+															<div class="form-group">
+															<button class="btn btn-primary btn-sm" >Progress</button> 
+															</div>
 														</li>
 													</td>
 												</tr>
