@@ -105,19 +105,19 @@
 													<td>
 														<li class="list-inline-item">
 															<div class="form-group">
-															<button class="btn btn-primary btn-sm">Tahapan Persiapan</button> 
+															<a href="<?=site_url('tahapanPersiapan')?>" class="btn btn-primary btn-sm">Tahapan Persiapan</a> 
 															</div>
 															<div class="form-group">
-															<button class="btn btn-info btn-sm" >Tahapan Pelaksanaan</button>
+															<a href="<?=site_url('tahapanPelaksanaan')?>" class="btn btn-info btn-sm" >Tahapan Pelaksanaan</a>
 															</div>
 															<div class="form-group"> 
-															<button class="btn btn-primary btn-sm" >Tahapan Penyelesaian</button> 
+															<a href="<?=site_url('tahapanPenyelesaian')?>" class="btn btn-primary btn-sm" >Tahapan Penyelesaian</a> 
 															</div>
 															<div class="form-group">
-															<button class="btn btn-info btn-sm" >Tahapan Pelapor</button> 
+															<a href="<?=site_url('tahapanPelapor')?>" class="btn btn-info btn-sm" >Tahapan Pelapor</a> 
 															</div>
 															<div class="form-group">
-															<button class="btn btn-primary btn-sm" >Progress</button> 
+															<a href="<?=site_url('progress')?>" class="btn btn-primary btn-sm" >Progress</a> 
 															</div>
 														</li>
 													</td>
