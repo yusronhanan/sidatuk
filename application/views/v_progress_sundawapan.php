@@ -6,7 +6,7 @@
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-header">
-										<h4 class="card-title">Pilih Progress:</h4> 
+										<h4 class="card-title">Pilih Tahapan:</h4> 
 										
 										<a href="" type="button" class="btn btn-info">Irigasi</a>
 										<a href="" type="button" class="btn btn-info">Sundawapan</a>
