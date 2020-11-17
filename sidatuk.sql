@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: sql313.byetcluster.com
--- Generation Time: Nov 16, 2020 at 08:58 PM
--- Server version: 5.6.48-88.0
--- PHP Version: 7.2.22
+-- Host: 127.0.0.1
+-- Generation Time: Nov 17, 2020 at 03:39 AM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.2.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `epiz_26964948_sidatuk`
+-- Database: `sidatuk`
 --
 
 -- --------------------------------------------------------
@@ -30,35 +29,35 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `irigasi` (
   `idIrigasi` int(11) NOT NULL,
-  `kodeTender` text,
-  `namaPaket` text,
-  `metodePengadaan` text,
+  `kodeTender` text DEFAULT NULL,
+  `namaPaket` text DEFAULT NULL,
+  `metodePengadaan` text DEFAULT NULL,
   `nilaiPagu` double DEFAULT NULL,
   `nilaiHPS` double DEFAULT NULL,
   `nilaiKontrak` double DEFAULT NULL,
   `tanggalPermohonanLelang` date DEFAULT NULL,
-  `nomorPermohonanLelang` text,
-  `rencanaProsesPengadaan` text,
-  `tahapTender` text,
+  `nomorPermohonanLelang` text DEFAULT NULL,
+  `rencanaProsesPengadaan` text DEFAULT NULL,
+  `tahapTender` text DEFAULT NULL,
   `mulaiLelangRencana` date DEFAULT NULL,
   `selesaiLelangRencana` date DEFAULT NULL,
   `mulaiLelangRealisasi` date DEFAULT NULL,
   `selesaiLelangRealisasi` date DEFAULT NULL,
-  `alasanPerubahanJadwal` text,
-  `gagalLelang1` text,
-  `alasanGagalLelang1` text,
+  `alasanPerubahanJadwal` text DEFAULT NULL,
+  `gagalLelang1` text DEFAULT NULL,
+  `alasanGagalLelang1` text DEFAULT NULL,
   `mulaiJadwalLelangUlangRencana` date DEFAULT NULL,
   `selesaiJadwalLelangUlangRencana` date DEFAULT NULL,
   `mulaiJadwalLelangUlangRealisasi` date DEFAULT NULL,
   `selesaiJadwalLelangUlangRealisasi` date DEFAULT NULL,
-  `alasanPerubahanJadwalLelangUlang` text,
-  `gagalLelang2` text,
-  `alasanGagalLelang2` text,
-  `penunjukanLangsung` text,
-  `nomorSPPBJTanggal` text,
-  `alasanSPPBJUndur` text,
-  `nomorSPKTanggal` text,
-  `alasanSPKUndur` text
+  `alasanPerubahanJadwalLelangUlang` text DEFAULT NULL,
+  `gagalLelang2` text DEFAULT NULL,
+  `alasanGagalLelang2` text DEFAULT NULL,
+  `penunjukanLangsung` text DEFAULT NULL,
+  `nomorSPPBJTanggal` text DEFAULT NULL,
+  `alasanSPPBJUndur` text DEFAULT NULL,
+  `nomorSPKTanggal` text DEFAULT NULL,
+  `alasanSPKUndur` text DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
@@ -79,17 +78,19 @@ INSERT INTO `irigasi` (`idIrigasi`, `kodeTender`, `namaPaket`, `metodePengadaan`
 
 CREATE TABLE `progress` (
   `idProgress` int(11) NOT NULL,
+  `tipe` varchar(200) NOT NULL,
   `uraian` text NOT NULL,
   `fileName` text NOT NULL,
-  `dateTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `dateTime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `progress`
 --
 
-INSERT INTO `progress` (`idProgress`, `uraian`, `fileName`, `dateTime`) VALUES
-(8, 'Progres Tanggal 02 Nov 2020 - 06 Nov 2020', 'Kurva_S_SUGE.pdf', '2020-11-16 08:44:55');
+INSERT INTO `progress` (`idProgress`, `tipe`, `uraian`, `fileName`, `dateTime`) VALUES
+(8, 'irigasi', 'Progres Tanggal 02 Nov 2020 - 06 Nov 2020', 'Kurva_S_SUGE.pdf', '2020-11-17 02:34:03'),
+(15, 'sundawapan', 'Progres Tanggal 04 Nov 2020 - 09 Nov 2020', 'assigment_jarkom.pdf', '2020-11-17 02:35:56');
 
 -- --------------------------------------------------------
 
@@ -99,35 +100,35 @@ INSERT INTO `progress` (`idProgress`, `uraian`, `fileName`, `dateTime`) VALUES
 
 CREATE TABLE `sarpras` (
   `idSarpras` int(11) NOT NULL,
-  `kodeTender` text,
-  `namaPaket` text,
-  `metodePengadaan` text,
+  `kodeTender` text DEFAULT NULL,
+  `namaPaket` text DEFAULT NULL,
+  `metodePengadaan` text DEFAULT NULL,
   `nilaiPagu` double DEFAULT NULL,
   `nilaiHPS` double DEFAULT NULL,
   `nilaiKontrak` double DEFAULT NULL,
   `tanggalPermohonanLelang` date DEFAULT NULL,
-  `nomorPermohonanLelang` text,
-  `rencanaProsesPengadaan` text,
-  `tahapTender` text,
+  `nomorPermohonanLelang` text DEFAULT NULL,
+  `rencanaProsesPengadaan` text DEFAULT NULL,
+  `tahapTender` text DEFAULT NULL,
   `mulaiLelangRencana` date DEFAULT NULL,
   `selesaiLelangRencana` date DEFAULT NULL,
   `mulaiLelangRealisasi` date DEFAULT NULL,
   `selesaiLelangRealisasi` date DEFAULT NULL,
-  `alasanPerubahanJadwal` text,
-  `gagalLelang1` text,
-  `alasanGagalLelang1` text,
+  `alasanPerubahanJadwal` text DEFAULT NULL,
+  `gagalLelang1` text DEFAULT NULL,
+  `alasanGagalLelang1` text DEFAULT NULL,
   `mulaiJadwalLelangUlangRencana` date DEFAULT NULL,
   `selesaiJadwalLelangUlangRencana` date DEFAULT NULL,
   `mulaiJadwalLelangUlangRealisasi` date DEFAULT NULL,
   `selesaiJadwalLelangUlangRealisasi` date DEFAULT NULL,
-  `alasanPerubahanJadwalLelangUlang` text,
-  `gagalLelang2` text,
-  `alasanGagalLelang2` text,
-  `penunjukanLangsung` text,
-  `nomorSPPBJTanggal` text,
-  `alasanSPPBJUndur` text,
-  `nomorSPKTanggal` text,
-  `alasanSPKUndur` text
+  `alasanPerubahanJadwalLelangUlang` text DEFAULT NULL,
+  `gagalLelang2` text DEFAULT NULL,
+  `alasanGagalLelang2` text DEFAULT NULL,
+  `penunjukanLangsung` text DEFAULT NULL,
+  `nomorSPPBJTanggal` text DEFAULT NULL,
+  `alasanSPPBJUndur` text DEFAULT NULL,
+  `nomorSPKTanggal` text DEFAULT NULL,
+  `alasanSPKUndur` text DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
@@ -146,35 +147,35 @@ INSERT INTO `sarpras` (`idSarpras`, `kodeTender`, `namaPaket`, `metodePengadaan`
 
 CREATE TABLE `sundawapan` (
   `idSundawapan` int(11) NOT NULL,
-  `kodeTender` text,
-  `namaPaket` text,
-  `metodePengadaan` text,
+  `kodeTender` text DEFAULT NULL,
+  `namaPaket` text DEFAULT NULL,
+  `metodePengadaan` text DEFAULT NULL,
   `nilaiPagu` double DEFAULT NULL,
   `nilaiHPS` double DEFAULT NULL,
   `nilaiKontrak` double DEFAULT NULL,
   `tanggalPermohonanLelang` date DEFAULT NULL,
-  `nomorPermohonanLelang` text,
-  `rencanaProsesPengadaan` text,
-  `tahapTender` text,
+  `nomorPermohonanLelang` text DEFAULT NULL,
+  `rencanaProsesPengadaan` text DEFAULT NULL,
+  `tahapTender` text DEFAULT NULL,
   `mulaiLelangRencana` date DEFAULT NULL,
   `selesaiLelangRencana` date DEFAULT NULL,
   `mulaiLelangRealisasi` date DEFAULT NULL,
   `selesaiLelangRealisasi` date DEFAULT NULL,
-  `alasanPerubahanJadwal` text,
-  `gagalLelang1` text,
-  `alasanGagalLelang1` text,
+  `alasanPerubahanJadwal` text DEFAULT NULL,
+  `gagalLelang1` text DEFAULT NULL,
+  `alasanGagalLelang1` text DEFAULT NULL,
   `mulaiJadwalLelangUlangRencana` date DEFAULT NULL,
   `selesaiJadwalLelangUlangRencana` date DEFAULT NULL,
   `mulaiJadwalLelangUlangRealisasi` date DEFAULT NULL,
   `selesaiJadwalLelangUlangRealisasi` date DEFAULT NULL,
-  `alasanPerubahanJadwalLelangUlang` text,
-  `gagalLelang2` text,
-  `alasanGagalLelang2` text,
-  `penunjukanLangsung` text,
-  `nomorSPPBJTanggal` text,
-  `alasanSPPBJUndur` text,
-  `nomorSPKTanggal` text,
-  `alasanSPKUndur` text
+  `alasanPerubahanJadwalLelangUlang` text DEFAULT NULL,
+  `gagalLelang2` text DEFAULT NULL,
+  `alasanGagalLelang2` text DEFAULT NULL,
+  `penunjukanLangsung` text DEFAULT NULL,
+  `nomorSPPBJTanggal` text DEFAULT NULL,
+  `alasanSPPBJUndur` text DEFAULT NULL,
+  `nomorSPKTanggal` text DEFAULT NULL,
+  `alasanSPKUndur` text DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
@@ -196,9 +197,9 @@ CREATE TABLE `tahapanpelaksanaan` (
   `tipe` varchar(200) NOT NULL,
   `uraian` text NOT NULL,
   `status` varchar(200) NOT NULL,
-  `keterangan` text,
-  `fileName` text,
-  `dateTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `keterangan` text DEFAULT NULL,
+  `fileName` text DEFAULT NULL,
+  `dateTime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
@@ -235,7 +236,7 @@ CREATE TABLE `tahapanpelapor` (
   `tipe` varchar(200) NOT NULL,
   `uraian` text NOT NULL,
   `fileName` text NOT NULL,
-  `dateTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `dateTime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
@@ -276,9 +277,9 @@ CREATE TABLE `tahapanpenyelesaian` (
   `tipe` varchar(200) NOT NULL,
   `uraian` text NOT NULL,
   `status` varchar(200) NOT NULL,
-  `keterangan` text,
-  `fileName` text,
-  `dateTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `keterangan` text DEFAULT NULL,
+  `fileName` text DEFAULT NULL,
+  `dateTime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
@@ -307,9 +308,9 @@ CREATE TABLE `tahapanpersiapan` (
   `tipe` varchar(200) NOT NULL,
   `uraian` text NOT NULL,
   `status` varchar(200) NOT NULL,
-  `keterangan` text,
-  `fileName` text,
-  `dateTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `keterangan` text DEFAULT NULL,
+  `fileName` text DEFAULT NULL,
+  `dateTime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
@@ -434,7 +435,7 @@ ALTER TABLE `irigasi`
 -- AUTO_INCREMENT for table `progress`
 --
 ALTER TABLE `progress`
-  MODIFY `idProgress` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idProgress` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `sarpras`
