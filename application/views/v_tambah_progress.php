@@ -1,9 +1,10 @@
 <div class="page-inner">
 					<div class="page-header">
-						<h4 class="page-title">Input Data Progress</h4>
+						<h4 class="page-title">Input Data Progress <?= ucfirst($tipe) ?></h4>
 					</div>
 				
-				<form method="post" action="<?=site_url("progress/add")?>" enctype="multipart/form-data">
+				<form method="post" action="<?=site_url("progress/add/").$tipe?>" enctype="multipart/form-data">
+        <input type="hidden" name="tipe" value="<?= $tipe ?>">
 
                     <div class="form-group">
                         <label for="exampleInputPassword1">Uraian</label>

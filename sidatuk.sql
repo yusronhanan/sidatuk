@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 18, 2020 at 02:34 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.2.33
+-- Host: sql313.byetcluster.com
+-- Generation Time: Nov 16, 2020 at 08:58 PM
+-- Server version: 5.6.48-88.0
+-- PHP Version: 7.2.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sidatuk`
+-- Database: `epiz_26964948_sidatuk`
 --
 
 -- --------------------------------------------------------
@@ -29,36 +30,36 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `irigasi` (
   `idIrigasi` int(11) NOT NULL,
-  `kodeTender` text DEFAULT NULL,
-  `namaPaket` text DEFAULT NULL,
-  `metodePengadaan` text DEFAULT NULL,
+  `kodeTender` text,
+  `namaPaket` text,
+  `metodePengadaan` text,
   `nilaiPagu` double DEFAULT NULL,
   `nilaiHPS` double DEFAULT NULL,
   `nilaiKontrak` double DEFAULT NULL,
   `tanggalPermohonanLelang` date DEFAULT NULL,
-  `nomorPermohonanLelang` text DEFAULT NULL,
-  `rencanaProsesPengadaan` text DEFAULT NULL,
-  `tahapTender` text DEFAULT NULL,
+  `nomorPermohonanLelang` text,
+  `rencanaProsesPengadaan` text,
+  `tahapTender` text,
   `mulaiLelangRencana` date DEFAULT NULL,
   `selesaiLelangRencana` date DEFAULT NULL,
   `mulaiLelangRealisasi` date DEFAULT NULL,
   `selesaiLelangRealisasi` date DEFAULT NULL,
-  `alasanPerubahanJadwal` text DEFAULT NULL,
-  `gagalLelang1` text DEFAULT NULL,
-  `alasanGagalLelang1` text DEFAULT NULL,
+  `alasanPerubahanJadwal` text,
+  `gagalLelang1` text,
+  `alasanGagalLelang1` text,
   `mulaiJadwalLelangUlangRencana` date DEFAULT NULL,
   `selesaiJadwalLelangUlangRencana` date DEFAULT NULL,
   `mulaiJadwalLelangUlangRealisasi` date DEFAULT NULL,
   `selesaiJadwalLelangUlangRealisasi` date DEFAULT NULL,
-  `alasanPerubahanJadwalLelangUlang` text DEFAULT NULL,
-  `gagalLelang2` text DEFAULT NULL,
-  `alasanGagalLelang2` text DEFAULT NULL,
-  `penunjukanLangsung` text DEFAULT NULL,
-  `nomorSPPBJTanggal` text DEFAULT NULL,
-  `alasanSPPBJUndur` text DEFAULT NULL,
-  `nomorSPKTanggal` text DEFAULT NULL,
-  `alasanSPKUndur` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `alasanPerubahanJadwalLelangUlang` text,
+  `gagalLelang2` text,
+  `alasanGagalLelang2` text,
+  `penunjukanLangsung` text,
+  `nomorSPPBJTanggal` text,
+  `alasanSPPBJUndur` text,
+  `nomorSPKTanggal` text,
+  `alasanSPKUndur` text
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `irigasi`
@@ -80,20 +81,15 @@ CREATE TABLE `progress` (
   `idProgress` int(11) NOT NULL,
   `uraian` text NOT NULL,
   `fileName` text NOT NULL,
-  `dateTime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `dateTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `progress`
 --
 
 INSERT INTO `progress` (`idProgress`, `uraian`, `fileName`, `dateTime`) VALUES
-(1, 'Laporan Harian Tanggal 20', 'detail_(1)2.pdf', '2020-10-14 11:47:57'),
-(2, 'Laporan mingguan pertamaas', 'Tables - Atlantis Lite Bootstrap 4 Admin Dashboard.xlsx', '2020-10-16 09:00:18'),
-(3, 'Laporan Januaris', 'Tables - Atlantis Lite Bootstrap 4 Admin Dashboard (4).xlsx', '2020-10-16 09:00:07'),
-(4, 'Laporan Tanggal 21', 'debug.log', '2020-10-14 11:49:11'),
-(5, 'Laporan mingguan kedua', 'QuizNo2_1202184316 (2).docx', '2020-10-14 11:49:31'),
-(6, 'Laporan februari', 'Project_Charter.pdf', '2020-10-14 11:49:49');
+(8, 'Progres Tanggal 02 Nov 2020 - 06 Nov 2020', 'Kurva_S_SUGE.pdf', '2020-11-16 08:44:55');
 
 -- --------------------------------------------------------
 
@@ -103,36 +99,36 @@ INSERT INTO `progress` (`idProgress`, `uraian`, `fileName`, `dateTime`) VALUES
 
 CREATE TABLE `sarpras` (
   `idSarpras` int(11) NOT NULL,
-  `kodeTender` text DEFAULT NULL,
-  `namaPaket` text DEFAULT NULL,
-  `metodePengadaan` text DEFAULT NULL,
+  `kodeTender` text,
+  `namaPaket` text,
+  `metodePengadaan` text,
   `nilaiPagu` double DEFAULT NULL,
   `nilaiHPS` double DEFAULT NULL,
   `nilaiKontrak` double DEFAULT NULL,
   `tanggalPermohonanLelang` date DEFAULT NULL,
-  `nomorPermohonanLelang` text DEFAULT NULL,
-  `rencanaProsesPengadaan` text DEFAULT NULL,
-  `tahapTender` text DEFAULT NULL,
+  `nomorPermohonanLelang` text,
+  `rencanaProsesPengadaan` text,
+  `tahapTender` text,
   `mulaiLelangRencana` date DEFAULT NULL,
   `selesaiLelangRencana` date DEFAULT NULL,
   `mulaiLelangRealisasi` date DEFAULT NULL,
   `selesaiLelangRealisasi` date DEFAULT NULL,
-  `alasanPerubahanJadwal` text DEFAULT NULL,
-  `gagalLelang1` text DEFAULT NULL,
-  `alasanGagalLelang1` text DEFAULT NULL,
+  `alasanPerubahanJadwal` text,
+  `gagalLelang1` text,
+  `alasanGagalLelang1` text,
   `mulaiJadwalLelangUlangRencana` date DEFAULT NULL,
   `selesaiJadwalLelangUlangRencana` date DEFAULT NULL,
   `mulaiJadwalLelangUlangRealisasi` date DEFAULT NULL,
   `selesaiJadwalLelangUlangRealisasi` date DEFAULT NULL,
-  `alasanPerubahanJadwalLelangUlang` text DEFAULT NULL,
-  `gagalLelang2` text DEFAULT NULL,
-  `alasanGagalLelang2` text DEFAULT NULL,
-  `penunjukanLangsung` text DEFAULT NULL,
-  `nomorSPPBJTanggal` text DEFAULT NULL,
-  `alasanSPPBJUndur` text DEFAULT NULL,
-  `nomorSPKTanggal` text DEFAULT NULL,
-  `alasanSPKUndur` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `alasanPerubahanJadwalLelangUlang` text,
+  `gagalLelang2` text,
+  `alasanGagalLelang2` text,
+  `penunjukanLangsung` text,
+  `nomorSPPBJTanggal` text,
+  `alasanSPPBJUndur` text,
+  `nomorSPKTanggal` text,
+  `alasanSPKUndur` text
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `sarpras`
@@ -150,36 +146,36 @@ INSERT INTO `sarpras` (`idSarpras`, `kodeTender`, `namaPaket`, `metodePengadaan`
 
 CREATE TABLE `sundawapan` (
   `idSundawapan` int(11) NOT NULL,
-  `kodeTender` text DEFAULT NULL,
-  `namaPaket` text DEFAULT NULL,
-  `metodePengadaan` text DEFAULT NULL,
+  `kodeTender` text,
+  `namaPaket` text,
+  `metodePengadaan` text,
   `nilaiPagu` double DEFAULT NULL,
   `nilaiHPS` double DEFAULT NULL,
   `nilaiKontrak` double DEFAULT NULL,
   `tanggalPermohonanLelang` date DEFAULT NULL,
-  `nomorPermohonanLelang` text DEFAULT NULL,
-  `rencanaProsesPengadaan` text DEFAULT NULL,
-  `tahapTender` text DEFAULT NULL,
+  `nomorPermohonanLelang` text,
+  `rencanaProsesPengadaan` text,
+  `tahapTender` text,
   `mulaiLelangRencana` date DEFAULT NULL,
   `selesaiLelangRencana` date DEFAULT NULL,
   `mulaiLelangRealisasi` date DEFAULT NULL,
   `selesaiLelangRealisasi` date DEFAULT NULL,
-  `alasanPerubahanJadwal` text DEFAULT NULL,
-  `gagalLelang1` text DEFAULT NULL,
-  `alasanGagalLelang1` text DEFAULT NULL,
+  `alasanPerubahanJadwal` text,
+  `gagalLelang1` text,
+  `alasanGagalLelang1` text,
   `mulaiJadwalLelangUlangRencana` date DEFAULT NULL,
   `selesaiJadwalLelangUlangRencana` date DEFAULT NULL,
   `mulaiJadwalLelangUlangRealisasi` date DEFAULT NULL,
   `selesaiJadwalLelangUlangRealisasi` date DEFAULT NULL,
-  `alasanPerubahanJadwalLelangUlang` text DEFAULT NULL,
-  `gagalLelang2` text DEFAULT NULL,
-  `alasanGagalLelang2` text DEFAULT NULL,
-  `penunjukanLangsung` text DEFAULT NULL,
-  `nomorSPPBJTanggal` text DEFAULT NULL,
-  `alasanSPPBJUndur` text DEFAULT NULL,
-  `nomorSPKTanggal` text DEFAULT NULL,
-  `alasanSPKUndur` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `alasanPerubahanJadwalLelangUlang` text,
+  `gagalLelang2` text,
+  `alasanGagalLelang2` text,
+  `penunjukanLangsung` text,
+  `nomorSPPBJTanggal` text,
+  `alasanSPPBJUndur` text,
+  `nomorSPKTanggal` text,
+  `alasanSPKUndur` text
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `sundawapan`
@@ -200,26 +196,33 @@ CREATE TABLE `tahapanpelaksanaan` (
   `tipe` varchar(200) NOT NULL,
   `uraian` text NOT NULL,
   `status` varchar(200) NOT NULL,
-  `keterangan` text DEFAULT NULL,
-  `fileName` text DEFAULT NULL,
-  `dateTime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `keterangan` text,
+  `fileName` text,
+  `dateTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tahapanpelaksanaan`
 --
 
 INSERT INTO `tahapanpelaksanaan` (`idPelaksanaan`, `tipe`, `uraian`, `status`, `keterangan`, `fileName`, `dateTime`) VALUES
-(1, 'Pemeriksaan Bersama', 'Pemerikasaan bersama mengenai uptd pelelangan sungai citarum', 'Ya', NULL, 'WEEK_06-07__PROJECT_COST_MANAGEMENT3.pdf', '2020-10-14 11:56:23'),
-(2, 'Pengajuan Persyaratan untuk Material Kegiatan', 'Ini pengajuan', 'Tidak', 'covid', NULL, '2020-10-14 12:04:02'),
-(3, 'Pengajuan Persyaratan untuk Material Kegiatan', 'Pengajuan ke agent material', 'Ya', NULL, 'WEEK_06-07__PROJECT_COST_MANAGEMENT.pdf', '2020-10-14 12:04:25'),
-(4, 'Pemeriksaan Bersama', 'Pemeriksaan bersama tentang pembayaran uang muka', 'Tidak', 'Belum terbit', NULL, '2020-10-14 12:05:09'),
-(5, 'Pengawasan Mutu Konstruksi', 'Pngawasan mutu konstruksi di sungai citarum', 'Tidak', 'Belum terbit', NULL, '2020-10-14 12:05:32'),
-(6, 'Pengawasan Mutu Konstruksi', 'Pengawasan mutu konstruksi di wilayah sungai babakan', 'Ya', NULL, 'Tables - Atlantis Lite Bootstrap 4 Admin Dashboard (4).xlsx', '2020-10-14 12:05:59'),
-(7, 'Penerimaan dan Pembayaran Hasil Kerja', 'Penerimaan keuangan pembayaran', 'Tidak', 'Belum diterima', NULL, '2020-10-14 12:06:35'),
-(8, 'Penerimaan dan Pembayaran Hasil Kerja', 'Pembayaran kerja ke karyawan', 'Ya', NULL, 'BIDW - Week6 HFR.ppt', '2020-10-14 12:06:59'),
-(9, 'Kontrak Kritis', 'Kontrak kritis ke karyawan', 'Ya', NULL, 'DataTables example - File export.xlsx', '2020-10-14 12:07:21'),
-(10, 'Kontrak Kritis', 'Kontrak ke vendor', 'Tidak', 'Belum diterbitkan', NULL, '2020-10-14 12:07:36');
+(1, 'Pemeriksaan Bersama', 'Berita Acara Pemeriksaan Bersama', 'Tidak', 'Belum', NULL, '2020-10-27 07:03:31'),
+(2, 'Pengajuan Persyaratan untuk Material Kegiatan', 'Jadwal Mobilisasi Material', 'Tidak', 'Belum', NULL, '2020-10-27 07:06:11'),
+(3, 'Pengajuan Persyaratan untuk Material Kegiatan', 'Permohonan / Persetujuan Material ( Form)', 'Tidak', 'Belum', NULL, '2020-10-27 07:07:32'),
+(4, 'Pemeriksaan Bersama', 'Addendum', 'Tidak', 'Belum ', NULL, '2020-10-27 07:04:23'),
+(11, 'Pemeriksaan Bersama', 'Justyfikasi Teknis', 'Tidak', 'Belum', NULL, '2020-10-27 07:05:08'),
+(5, 'Pengawasan Mutu Konstruksi', 'Daftar Simak Pekerjaan Konstruksi', 'Tidak', 'Belum ', NULL, '2020-10-27 07:10:26'),
+(15, 'Kontrak Kritis', 'Melakukan Rapat Pembuktian (Show Cause Meeting/SCM)', 'Tidak', 'Belum', NULL, '2020-11-03 01:32:00'),
+(7, 'Penerimaan dan Pembayaran Hasil Kerja', 'Dokumen Mutual Check', 'Tidak', 'Belum diterima', NULL, '2020-11-03 01:25:06'),
+(8, 'Penerimaan dan Pembayaran Hasil Kerja', 'Foto Dokumentasi', 'Tidak', 'Belum', NULL, '2020-11-03 01:25:46'),
+(9, 'Kontrak Kritis', 'Sudah memenuhi ketentuan Kontrak Kritis yang diatur dalam Dokumen Kontrak', 'Tidak', 'Belum', NULL, '2020-11-03 01:30:03'),
+(10, 'Kontrak Kritis', 'Sudah ada Surat Peringatan dari PPK', 'Tidak', 'Belum ', NULL, '2020-11-03 01:30:53'),
+(12, 'Pengajuan Persyaratan untuk Material Kegiatan', 'Pemeriksaan dan Pengujian Material (Form)', 'Tidak', 'Belum', NULL, '2020-10-27 07:08:20'),
+(13, 'Pemeriksaan Bersama', 'Foto Dokumentasi Pekerjaan', 'Tidak', 'Belum', NULL, '2020-10-27 07:08:52'),
+(14, 'Pengajuan Persyaratan untuk Material Kegiatan', 'Foto Dokumentasi Material', 'Tidak', 'Belum', NULL, '2020-10-27 07:09:31'),
+(16, 'Kontrak Kritis', 'Berita Acara Show Cause Meeting', 'Tidak', 'Belum', NULL, '2020-11-03 01:33:20'),
+(17, 'Kontrak Kritis', 'Notulen Show Cause Meeting', 'Tidak', 'Belum', NULL, '2020-11-03 06:44:17'),
+(18, 'Kontrak Kritis', 'Foto Dokumentasi', 'Tidak', 'Belum', NULL, '2020-11-03 01:34:39');
 
 -- --------------------------------------------------------
 
@@ -232,20 +235,35 @@ CREATE TABLE `tahapanpelapor` (
   `tipe` varchar(200) NOT NULL,
   `uraian` text NOT NULL,
   `fileName` text NOT NULL,
-  `dateTime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `dateTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tahapanpelapor`
 --
 
 INSERT INTO `tahapanpelapor` (`idPelapor`, `tipe`, `uraian`, `fileName`, `dateTime`) VALUES
-(1, 'Laporan Harian', 'Laporan Harian Tanggal 20', 'detail_(1)2.pdf', '2020-10-14 11:47:57'),
-(2, 'Laporan Mingguan', 'Laporan mingguan pertama', 'Tables - Atlantis Lite Bootstrap 4 Admin Dashboard.xlsx', '2020-10-14 11:48:32'),
-(3, 'Laporan Bulanan', 'Laporan Januari', 'Tables - Atlantis Lite Bootstrap 4 Admin Dashboard (4).xlsx', '2020-10-14 11:48:50'),
-(4, 'Laporan Harian', 'Laporan Tanggal 21', 'debug.log', '2020-10-14 11:49:11'),
-(5, 'Laporan Mingguan', 'Laporan mingguan kedua', 'QuizNo2_1202184316 (2).docx', '2020-10-14 11:49:31'),
-(6, 'Laporan Bulanan', 'Laporan februari', 'Project_Charter.pdf', '2020-10-14 11:49:49');
+(1, 'Laporan Harian', 'Memuat Pekerjaan untuk setiap jenis pekerjaan dan/atau sub pekrjaan, pemenuhan kualitas dan kuantitas bahan yang digunakan, daftar perlatan yang meliputi jenis, jumlah dan kondisi peralatan, serta penempatan tenaga kerja untuk setiap pekerjaan dan/atau sub pekerjaan', 'detail_(1)2.pdf', '2020-11-02 23:56:23'),
+(2, 'Laporan Mingguan', 'rangkuman capaian pekerjaan berupa hasil pembandingan capaian dengan minggu sebelumnya dan capaian pada minggu berjalan dengan rencana kegiatan dan sasaran capaian pada minggu berikutnya', 'Tables - Atlantis Lite Bootstrap 4 Admin Dashboard.xlsx', '2020-11-03 00:10:29'),
+(3, 'Laporan Bulanan', 'Memuat capaian pekerjaan fisik, ringkasan status capaian pekerjaan fisik dengan membandungkan capaian di bulan sebelumnya, capaian pada bulan berjalan serta target capaian di bulan berikutnya', 'Tables - Atlantis Lite Bootstrap 4 Admin Dashboard (4).xlsx', '2020-11-03 00:17:34'),
+(4, 'Laporan Harian', 'Memuat kondisi cuaca, seperti hujan, banjir dan peristiwa alam lainnya yang berpengaruh terhadap pelekasanaan pekerjaan', 'debug.log', '2020-11-02 23:57:28'),
+(5, 'Laporan Mingguan', 'Memuat hambatan dan kendala yang dihadapi pada kurun waktu 1 (satu) minggu beserta tindakan penanggulangan yang telah dilakukan potensi kendala pada minggu berikutnya ', 'QuizNo2_1202184316 (2).docx', '2020-11-03 00:12:10'),
+(6, 'Laporan Bulanan', 'ringkasan status kondisi keuangan Penyedia Jasa Konstruksi, status pembayaran dari Pengguna Jasa ', 'Project_Charter.pdf', '2020-11-03 00:18:31'),
+(7, 'Laporan Harian', 'Hambatan dan kendala yang dihadapi berkenaan dengan pelaksanaan pekerjaaan di lapangan serta kondisi khusus lainnya yang berdampak atau berpotensi berdampak pada pelaksanaan pekerjaan', 'Form URK DAK Sungai 2020.xls', '2020-11-03 00:01:54'),
+(8, 'Laporan Harian', 'Informasi keselamatan konstruksi (kecelakaan kerja, nearmiss record dll)', 'Form URK DAK Sungai 2020.xls', '2020-11-03 00:04:37'),
+(9, 'Laporan Harian', 'Catatan keterlambatan', 'Form URK DAK Sungai 2020.xls', '2020-11-03 00:05:39'),
+(10, 'Laporan Harian', 'Disusun oleh Penyedia Jasa, Diperiksa oleh Direksi Teknis, Disetujui Oleh Direksi Lapangan, Diketahui oleh PPK', 'Form URK DAK Sungai 2020.xls', '2020-11-03 00:07:49'),
+(11, 'Laporan Harian', 'Dokumen Laporan Harian', 'Form URK DAK Sungai 2020.xls', '2020-11-03 00:08:16'),
+(12, 'Laporan Mingguan', 'Informasi keselamatan konstruksi (kecelakaan kerja, nearmiss record dll)', 'Form URK DAK Sungai 2020.xls', '2020-11-03 00:13:16'),
+(13, 'Laporan Mingguan', 'Disusun oleh Penyedia Jasa, Diperiksa oleh Direksi Teknis, Disetujui Oleh Direksi Lapangan, Diketahui oleh PPK', 'Form URK DAK Sungai 2020.xls', '2020-11-03 00:14:47'),
+(14, 'Laporan Mingguan', 'Dokumen Laporan Mingguan', 'Form URK DAK Sungai 2020.xls', '2020-11-03 00:15:07'),
+(15, 'Laporan Bulanan', 'Perubahan kontrak dan perubahan pekerjaan', 'Form URK DAK Sungai 2020.xls', '2020-11-03 00:18:56'),
+(16, 'Laporan Bulanan', 'masalah dan kendala yang dihadapi, termasuk statusnya, tindakan penanggulangan yang telah dilakukan dan rencana tindak lanjutnya', 'Form URK DAK Sungai 2020.xls', '2020-11-03 00:19:56'),
+(17, 'Laporan Bulanan', 'Hambatan dan kendala yang berpotensi terjadi di bulan berikutnya, beserta rencana pencegahan atau penanggulangan yang akan dilakukan', 'Form URK DAK Sungai 2020.xls', '2020-11-03 00:20:49'),
+(18, 'Laporan Bulanan', 'Informasi keselamatan konstruksi (kecelakaan kerja, nearmiss record dll)', 'Form URK DAK Sungai 2020.xls', '2020-11-03 00:21:41'),
+(19, 'Laporan Bulanan', 'Disusun oleh Penyedia Jasa, Diperiksa oleh Direksi Teknis, Disetujui Oleh Direksi Lapangan, Diketahui oleh PPK', 'Form URK DAK Sungai 2020.xls', '2020-11-03 00:22:32'),
+(20, 'Laporan Bulanan', 'Foto Dokumentasi ', 'Form URK DAK Sungai 2020.xls', '2020-11-03 00:23:49'),
+(21, 'Laporan Bulanan', 'Dokumen Laporan Mingguan', 'Form URK DAK Sungai 2020.xls', '2020-11-03 00:24:33');
 
 -- --------------------------------------------------------
 
@@ -258,24 +276,25 @@ CREATE TABLE `tahapanpenyelesaian` (
   `tipe` varchar(200) NOT NULL,
   `uraian` text NOT NULL,
   `status` varchar(200) NOT NULL,
-  `keterangan` text DEFAULT NULL,
-  `fileName` text DEFAULT NULL,
-  `dateTime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `keterangan` text,
+  `fileName` text,
+  `dateTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tahapanpenyelesaian`
 --
 
 INSERT INTO `tahapanpenyelesaian` (`idPenyelesaian`, `tipe`, `uraian`, `status`, `keterangan`, `fileName`, `dateTime`) VALUES
-(1, 'Serah Terima Pertama', 'Serah terima ke kepala pusat', 'Tidak', 'Belum terbit', NULL, '2020-10-14 11:37:46'),
-(2, 'Serah Terima Pertama', 'Serah terima ke cabang', 'Ya', NULL, 'detail_(1).pdf', '2020-10-14 11:38:19'),
-(3, 'Pemeliharaan Hasil Kerja', 'Maintenance alat bandung', 'Tidak', 'Tidak ada', NULL, '2020-10-14 11:44:17'),
-(4, 'Serah Terima Akhir Pekerjaan', 'Serah terima akhir ke cabang bandung', 'Ya', NULL, '1920-1_Kartu_Ujian_UAS_13011844762.pdf', '2020-10-14 11:44:41'),
-(5, 'Serah Terima Pekerajaan Selesai Terhadap Pemilik', 'Kasih ke kepala cabang bandung', 'Ya', NULL, 'WEEK_06-07__PROJECT_COST_MANAGEMENT1.pdf', '2020-10-14 11:45:13'),
-(6, 'Pemeliharaan Hasil Kerja', 'Maintenance alat berat', 'Tidak', 'kjhkjads', NULL, '2020-10-14 11:46:13'),
-(7, 'Serah Terima Akhir Pekerjaan', 'Serah terima ke bagian kepala pusat', 'Ya', NULL, 'detail_(1)1.pdf', '2020-10-14 11:46:38'),
-(8, 'Serah Terima Pekerajaan Selesai Terhadap Pemilik', 'Serah terima ke pemilik uptd', 'Tidak', 'Belum terbit', NULL, '2020-10-14 11:50:36');
+(1, 'Serah Terima Pertama', 'Berita Acara Serah Terima I', 'Ya', NULL, 'PROGRES 90 % (07 Nov 2020).xlsx', '2020-11-16 08:47:47'),
+(2, 'Serah Terima Pertama', 'Pemeriksaan Administrasi oleh PPHP (Dokumen Mutu, Dokumen Administrasi dan Dokumen Lainnya)', 'Tidak', 'Belum', NULL, '2020-11-02 23:34:45'),
+(3, 'Pemeliharaan Hasil Kerja', 'Pembentukan Tim Pemeliharaan (Penyedia Jasa dan Direksi Teknis)', 'Tidak', 'Belum', NULL, '2020-11-02 23:39:52'),
+(4, 'Serah Terima Akhir Pekerjaan', 'Permohonan pengajuan penerimaan hasil akhir pekerjaan ', 'Tidak', 'Belum', NULL, '2020-11-02 23:45:07'),
+(6, 'Pemeliharaan Hasil Kerja', 'Jaminan Pemeliharaan Diterbitkan Oleh (Bank Umum /Perusahaan Asuransi/Perusahaan Penjamin/Konsorsium Perusahaan Asuransi', 'Tidak', 'Belum', NULL, '2020-11-03 03:02:06'),
+(7, 'Serah Terima Akhir Pekerjaan', 'Pemeriksaan adminitrasi oleh PPHP (Dokumen Mutu, Dokumen Administrasi dan Dokumen Lainnya)', 'Tidak', 'Belum', NULL, '2020-11-02 23:47:33'),
+(10, 'Serah Terima Pertama', 'Foto Dokumentasi', 'Tidak', 'Belum', NULL, '2020-11-02 23:48:32'),
+(12, 'Serah Terima Akhir Pekerjaan', 'Foto Dokumentasi', 'Tidak', 'Belum', NULL, '2020-11-02 23:49:49'),
+(13, 'Serah Terima Akhir Pekerjaan', 'Berita Acara Serah Terima II', 'Tidak', 'Belum', NULL, '2020-11-03 06:55:03');
 
 -- --------------------------------------------------------
 
@@ -288,26 +307,31 @@ CREATE TABLE `tahapanpersiapan` (
   `tipe` varchar(200) NOT NULL,
   `uraian` text NOT NULL,
   `status` varchar(200) NOT NULL,
-  `keterangan` text DEFAULT NULL,
-  `fileName` text DEFAULT NULL,
-  `dateTime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `keterangan` text,
+  `fileName` text,
+  `dateTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tahapanpersiapan`
 --
 
 INSERT INTO `tahapanpersiapan` (`idPersiapan`, `tipe`, `uraian`, `status`, `keterangan`, `fileName`, `dateTime`) VALUES
-(1, 'Penyerahan Lokasi', 'Penyerahan lokais ke sungai ciliwung', 'Ya', NULL, 'WEEK_06-07__PROJECT_COST_MANAGEMENT.pdf', '2020-10-14 11:34:25'),
-(4, 'Penyerahan Lokasi', 'Tes input', 'Ya', '', '1920-1_Kartu_Ujian_UAS_1301184476.pdf', '2020-10-11 10:29:02'),
-(5, 'Penyerahan Lokasi', 'asdas', 'Ya', NULL, 'Uts_Sem4.PDF', '2020-10-11 15:42:05'),
-(7, 'Penyerahan Lokasi', 'sada', 'Tidak', 'adas', NULL, '2020-10-11 15:34:56'),
-(9, 'Mobilisasi', 'Mobilisasi pelelangan sundawapan', 'Ya', NULL, 'CamScanner_10-12-2020_12_53_181.pdf', '2020-10-14 11:51:59'),
-(10, 'SPMK (Surat Perintah Mulai Kerja)', 'SPMK versi 3 untuk kepala UPTD', 'Tidak', 'Belum terbit', NULL, '2020-10-14 11:33:20'),
-(11, 'Rapat Persiapan', 'Rapat Persiapan seluruh anggota', 'Ya', NULL, 'SIDATUK_REPORT_PACKET_IRIGASI.pdf', '2020-10-14 11:35:13'),
-(12, 'Pembayaran Uang Muka', 'Pembayaran Revitilasisi', 'Tidak', 'Ini', NULL, '2020-10-14 11:47:25'),
-(13, 'SPMK (Surat Perintah Mulai Kerja)', 'SPMK Ver 2', 'Ya', NULL, 'WEEK_06-07__PROJECT_COST_MANAGEMENT2.pdf', '2020-10-14 11:51:38'),
-(14, 'Mobilisasi', 'gyujtuy', 'Ya', NULL, '1920-1_Kartu_Ujian_UAS_13011844762.pdf', '2020-10-14 13:10:10');
+(25, 'Penyerahan Lokasi', 'Foto Dokumentasi', 'Ya', NULL, '1C.pdf', '2020-11-16 09:02:33'),
+(24, 'Penyerahan Lokasi', 'Berita Acara Penyerahan Lokasi Pekerjaan', 'Ya', NULL, '2_ BA_ Penyerahan Lokasi.jfif', '2020-11-03 05:15:56'),
+(23, 'Penyerahan Lokasi', 'Surat Penyerahan Lokasi Pekerjaan ', 'Ya', NULL, '2_ BA_ Penyerahan Lokasi.jfif', '2020-11-03 05:15:12'),
+(9, 'Mobilisasi', 'Permohonan Persetujuan Material', 'Tidak', 'Belum', NULL, '2020-10-27 06:58:22'),
+(10, 'SPMK (Surat Perintah Mulai Kerja)', 'Surat Perintah Mulai Kerja (SPMK)', 'Ya', NULL, 'SPMK.jpg', '2020-11-03 01:43:17'),
+(11, 'Rapat Persiapan', 'Berita Acara Rapat Persiapan Pelaksanaan Kontrak (PCM)', 'Ya', NULL, 'SIDATUK_REPORT_PACKET_IRIGASI.pdf', '2020-10-27 06:38:01'),
+(12, 'Pembayaran Uang Muka', 'Pembayaran Uang Muka Sesuai Syarat - Syarat Khusus Kontrak', 'Ya', NULL, '2_ BA_ Penyerahan Lokasi.jfif', '2020-11-03 09:07:52'),
+(13, 'SPMK (Surat Perintah Mulai Kerja)', 'Surat Perjanjian Kerja (SPK)', 'Ya', NULL, 'WEEK_06-07__PROJECT_COST_MANAGEMENT2.pdf', '2020-10-27 06:36:07'),
+(14, 'Mobilisasi', 'Mobilisasi personil sesuai dengan jadwal penugasan', 'Tidak', 'Belum', NULL, '2020-10-27 06:59:12'),
+(17, 'Rapat Persiapan', 'Mempresentasikan Rencana Mutu Pelaksanaan Kontrak (RMPK)', 'Tidak', 'Belum', NULL, '2020-10-27 06:42:35'),
+(18, 'Rapat Persiapan', 'Daftar Absen', 'Tidak', 'Belum', NULL, '2020-10-27 06:43:04'),
+(19, 'Rapat Persiapan', 'Notulen', 'Tidak', 'Belum', NULL, '2020-10-27 06:43:24'),
+(20, 'Rapat Persiapan', 'Foto Dokumentasi', 'Ya', NULL, 'img20201116_11522317.pdf', '2020-11-16 08:53:36'),
+(21, 'Pembayaran Uang Muka', 'Jaminan Uang Muka Diterbitkan Oleh (Bank Umum /Perusahaan Asuransi/Perusahaan Penjamin/Konsorsium Perusahaan Asuransi', 'Tidak', 'Belum', NULL, '2020-11-03 03:00:37'),
+(22, 'SPMK (Surat Perintah Mulai Kerja)', 'Foto Dokumentasi', 'Ya', NULL, 'foto SPK.jfif', '2020-11-03 01:46:13');
 
 -- --------------------------------------------------------
 
@@ -322,7 +346,7 @@ CREATE TABLE `user` (
   `jabatan` text NOT NULL,
   `password` text NOT NULL,
   `role` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
@@ -330,7 +354,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`idUser`, `nip`, `nama`, `jabatan`, `password`, `role`) VALUES
 (1, '19710813 199703 1 007', 'Dikky Achmad Sidik, ST, MT', 'Kepala Dinas', 'dikky', 'user'),
-(2, '19690416 200502 1 001', 'Bambang Imanudin ST,.MT', 'Kepala Bidang Bina Konstruksi', 'bambang\r\n', 'user'),
+(2, '19690416 200502 1 001', 'Bambang Imanudin ST,.MT', 'Kepala Bidang Bina Konstruksi', 'bambang', 'user'),
 (3, '19760604 200801 1 003', 'DIKDIK AKHMAD SODIKIN, ST', 'Kasie Konstruksi Irigasi', 'dikdik', 'user'),
 (4, '19780822 200604 2 009', 'LUSIE MUSIANTY ST.,MPSDA', 'Kasie Konstruksi Sundawapan', 'lusie', 'user'),
 (5, '19640219 199303 1 004', 'TAUFIK, ST', 'Kasie Tata Teknik', 'taufik', 'user\r\n'),
@@ -410,7 +434,7 @@ ALTER TABLE `irigasi`
 -- AUTO_INCREMENT for table `progress`
 --
 ALTER TABLE `progress`
-  MODIFY `idProgress` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idProgress` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `sarpras`
@@ -428,25 +452,25 @@ ALTER TABLE `sundawapan`
 -- AUTO_INCREMENT for table `tahapanpelaksanaan`
 --
 ALTER TABLE `tahapanpelaksanaan`
-  MODIFY `idPelaksanaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idPelaksanaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `tahapanpelapor`
 --
 ALTER TABLE `tahapanpelapor`
-  MODIFY `idPelapor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idPelapor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `tahapanpenyelesaian`
 --
 ALTER TABLE `tahapanpenyelesaian`
-  MODIFY `idPenyelesaian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idPenyelesaian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tahapanpersiapan`
 --
 ALTER TABLE `tahapanpersiapan`
-  MODIFY `idPersiapan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `idPersiapan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `user`

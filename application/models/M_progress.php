@@ -8,6 +8,7 @@ class M_progress extends CI_Model {
     public function add($file){
          
         $data = array(
+            'tipe' => $this->input->post('tipe'), //jgn lupa tambah input hidden di form
            'uraian' => $this->input->post('uraian')
         );
         if($file['file_name']!=""){

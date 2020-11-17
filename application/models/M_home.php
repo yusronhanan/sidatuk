@@ -21,6 +21,12 @@ class M_home extends CI_Model {
         return $this->db->where("tipe",$tipe)
                         ->get($table)->result();
     }
+    
+    public function getAllDataProgress($tipe)
+    {
+        return $this->db->where("tipe",$tipe)
+                        ->get("progress")->result();
+    }
 
 }
 

@@ -13,27 +13,48 @@ class Progress extends CI_Controller {
     }
 
     public function index(){
-if ($this->session->userdata('logged_in')) {
-    $data =[
-        "data" => $this->M_home->getAllData("progress"),
-        "main_view" => "v_progress"
-    ];
-    $this->load->view('v_layout',$data);
-        }else{
-            $this->session->set_flashdata('notif', 'Anda belum login');
-            redirect('auth');
-            
-          }
+        if ($this->session->userdata('logged_in')) {
+                $tipe = "irigasi";
+                redirect('/progress/data/'.$tipe);
+                }else{
+                    $this->session->set_flashdata('notif', 'Anda belum login');
+                    redirect('auth');
+                    
+                  }
     }
+        
+        public function data($tipe)
+        {
+            if ($this->session->userdata('logged_in')) {
+            
+                if($tipe == "irigasi" || $tipe == "sundawapan" || $tipe == "sarpras"){
+                    $data =[
+                        "tipe"  => $tipe,
+                        "data" => $this->M_home->getAllDataProgress($tipe),
+                        "main_view" => "v_progress"
+                    ];
+                    $this->load->view('v_layout',$data);
+                } else{
+                    $tipe = "irigasi";
+                    redirect('/progress/data/'.$tipe);
+                }
+            
+            }else{
+                $this->session->set_flashdata('notif', 'Anda belum login');
+                redirect('auth');
+                
+                }
+        }
 
 
  
 
 
 
-    public function tambah(){
+    public function tambah($tipe){
         if ($this->session->userdata('logged_in')) {
         $data =[
+            'tipe' => $tipe,
             "main_view" => "v_tambah_progress"
         ];
         $this->load->view('v_layout',$data);
@@ -44,12 +65,13 @@ if ($this->session->userdata('logged_in')) {
           }
     }
 
-    public function ubah($id){
+    public function ubah($tipe, $id){
         if ($this->session->userdata('logged_in')) {
       
         $data =[
             "data" => $this->M_home->getData(array("idProgress" => $id),"progress")->row(),
-            "main_view" => "v_ubah_progress"
+            "main_view" => "v_ubah_progress",
+            'tipe' => $tipe,
         ];
         $this->load->view('v_layout',$data);  
         }else{
@@ -58,7 +80,7 @@ if ($this->session->userdata('logged_in')) {
             
           }     
     }
-    public function add()
+    public function add($tipe)
     {
     //   $this->form_validation->set_rules('', '', '');
     //   if ($this->form_validation->run() == TRUE) {
@@ -72,11 +94,11 @@ if ($this->session->userdata('logged_in')) {
                             if ($this->M_progress->add($file)) {
                             $this->session->set_flashdata('type', 'success');
                             $this->session->set_flashdata('notif', 'Sukses tambah data');
-                            redirect('progress'); /* need to modified */
+                            redirect('progress/data/'.$tipe); /* need to modified */
                             
                             } else {
                             $this->session->set_flashdata('notif', 'Gagal tambah data');
-                            redirect('progress'); /* need to modified */
+                            redirect('progress/data/'.$tipe); /* need to modified */
                             }
                    }else{
             $this->session->set_flashdata('notif', 'Anda belum login');
@@ -89,7 +111,7 @@ if ($this->session->userdata('logged_in')) {
     //   }
     }
 
-    public function edit($id)
+    public function edit($tipe, $id)
     {
     //   $this->form_validation->set_rules('', '', '');
     //   if ($this->form_validation->run() == TRUE) {
@@ -103,11 +125,11 @@ if ($this->session->userdata('logged_in')) {
                             if ($this->M_progress->edit($id, $file)) {
                             $this->session->set_flashdata('type', 'success');
                             $this->session->set_flashdata('notif', 'Sukses ubah data');
-                            redirect('progress'); /* need to modified */
+                            redirect('progress/data/'.$tipe); /* need to modified */
                             
                             } else {
                             $this->session->set_flashdata('notif', 'Gagal ubah data');
-                            redirect('progress'); /* need to modified */
+                            redirect('progress/data/'.$tipe); /* need to modified */
                             }
                 }else{
             $this->session->set_flashdata('notif', 'Anda belum login');
@@ -120,7 +142,7 @@ if ($this->session->userdata('logged_in')) {
     //   }
     }
 
-    public function delete($id)
+    public function delete($tipe, $id)
     {
         if ($this->session->userdata('logged_in')) {
       if($this->M_progress->delete($id)){
@@ -130,7 +152,7 @@ if ($this->session->userdata('logged_in')) {
         $this->session->set_flashdata('notif', 'Gagal hapus data');
       }
       
-      redirect('progress'); /* need to modified */
+      redirect('progress/data/'.$tipe); /* need to modified */
       }else{
             $this->session->set_flashdata('notif', 'Anda belum login');
             redirect('auth');

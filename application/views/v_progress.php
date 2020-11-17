@@ -7,13 +7,11 @@
 							<div class="card">
 								<div class="card-header">
 										<h4 class="card-title">Pilih Progress:</h4> 
-										
-										<a href="" type="button" class="btn btn-info">Irigasi</a>
-										<a href="" type="button" class="btn btn-info">Sundawapan</a>
-										<a href="" type="button" class="btn btn-info">Sarpras</a>
-									
+										<a href="<?=site_url('progress/data/irigasi')?>" type="button" class="btn btn-<?php if($tipe == 'irigasi'){ echo 'primary';} else{ echo 'info';}?>">Irigasi</a>
+										<a href="<?=site_url('progress/data/sundawapan')?>" type="button" class="btn btn-<?php if($tipe == 'sundawapan'){ echo 'primary';} else{ echo 'info';}?>">Sundawapan</a>
+										<a href="<?=site_url('progress/data/sarpras')?>" type="button" class="btn btn-<?php if($tipe == 'sarpras'){ echo 'primary';} else{ echo 'info';}?>">Sarpras</a>
 									<hr>
-                                      <a  href="<?= site_url("progress/tambah")?>" class="btn btn-primary btn-round ml-auto" style="float: right;">
+                                      <a  href="<?= site_url("progress/tambah/").$tipe?>" class="btn btn-primary btn-round ml-auto" style="float: right;">
 										<i class="fa fa-plus"></i>
 										Tambah Data
 									</a>
@@ -57,8 +55,8 @@
                                                     ?></td>
                                                     <td>
 														<li class="list-inline-item">
-															<a href="<?= site_url("progress/ubah/").$d->idProgress?>" class="btn btn-primary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
-															<a href="<?= site_url("progress/delete/").$d->idProgress?>" onClick="return confirm('Apa benar anda ingin menghapusnya?')" class="btn btn-info btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
+															<a href="<?= site_url("progress/ubah/").$tipe."/".$d->idProgress?>" class="btn btn-primary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
+															<a href="<?= site_url("progress/delete/").$tipe."/".$d->idProgress?>" onClick="return confirm('Apa benar anda ingin menghapusnya?')" class="btn btn-info btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
 														</li>
 													</td>
 												</tr>
